@@ -1,0 +1,421 @@
+@use "sass:color";
+@use "../abstracts/variables" as v;
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-6px); }
+    66% { transform: translateX(6px); }
+    100% { transform: translateX(0);}
+}
+
+@mixin form-basique($width: 70%, $height: 500px) {
+    position: relative;
+    width: $width;
+    max-width: 1200px;
+    max-height: $height;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: v.$color-black;
+    border-radius: 0.5rem;
+    background: v.$color-white;
+    box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
+}
+
+@mixin warming() {
+    .warming {
+        width: 100%;
+        .alert {
+            background-color: color.adjust(v.$color-secondary, $lightness: -10%);
+            padding: 1rem;
+            border-radius: 6px 6px 0 0;
+            border: solid 3px v.$color-primary;
+            text-align: center;
+        }
+
+        .mb-3 {
+            font-size: 0.95rem;
+            text-align: center;
+            a {
+                color: color.adjust(v.$color-secondary, $lightness: +20%);
+                text-decoration: underline;
+            }
+        }
+        .mb-3:hover {
+            color: v.$color-white;
+        }
+    }
+}
+
+@mixin mix($width: 50%, $height: 500px) {
+    .mix {
+        position: relative;
+        width: $width;
+        overflow: hidden;
+
+        figure {
+            width: 100%;
+            img {
+                min-height: $height;
+                max-height: $height;
+            }
+        }
+
+        .headline {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 1rem;
+            color: white;
+            width: 70%;
+
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+
+            .text-headline {
+                color: v.$color-primary;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                letter-spacing: 0.4rem;
+            }
+            .text-subheadline {
+                color: v.$color-secondary;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.14rem;
+                text-shadow: 2px 2px 2px v.$color-accent;
+            }
+        }
+    }
+}
+
+@mixin input-label-effect() {
+    span {
+        display: block;
+        margin-bottom: 1.15rem;
+        position: relative;
+
+        label {
+            color: v.$color-primary;
+            font-family: v.$font-titre;
+            font-size: 0.75rem;
+            letter-spacing: .08rem;
+            text-transform: uppercase;
+            display: inline-block;
+            transform: translateY(1.25rem);
+            transition: 0.15s ease;
+        }
+
+        .input-reset-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            input,
+            select,
+            textarea {
+                flex: 1 1 auto;
+            }
+        }
+
+        input, select, textarea {
+            flex: 1;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid v.$color-accent;
+            font-family: v.$font-titre;
+            color: v.$color-primary;
+            background: none;
+            padding: 0.3rem 0;
+            outline: none;
+            resize: none;
+        }
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: none;
+            border-bottom-color: color.adjust(v.$color-primary, $lightness: 20%);
+        }
+
+        #bottles_type_form_bio, #bottles_type_form_sulfite {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            border-bottom: 2px solid v.$color-accent;
+            font-family: v.$font-titre;
+            color: v.$color-primary;
+            background: none;
+            padding: 0.3rem 0;
+            outline: none;
+            resize: none;
+
+            input[type=radio] {
+                accent-color: v.$color-accent;
+            }
+        }
+    }
+
+    .number, #region-field, #cepage-field, .selecte, .radio-inline-group, #image {
+        label {
+            transform: translate(0, 0);
+        }
+    }
+
+    input[type="file"] {
+        &::-webkit-file-upload-button {
+            background-color: transparent;
+            color: v.$color-accent;
+            border: none;
+            padding: 0.3rem 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &::-webkit-file-upload-button:hover {
+            background-color: v.$color-accent;
+            color: v.$color-white;
+        }
+
+        &::file-selector-button { // pour Firefox
+            padding: 0.3rem 0.5rem;
+            background-color: transparent;
+            color: v.$color-accent;
+            border: 1px solid v.$color-accent;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &::file-selector-button:hover {
+            background-color: v.$color-accent;
+            color: v.$color-white;
+        }
+    }
+
+    input[type=submit] {
+        margin: 1em auto 0;
+        background: v.$color-primary;
+        color: v.$color-white;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-family: v.$font-titre;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    input[type=submit]:hover,
+    input[type=submit]:focus {
+        background: color.adjust(v.$color-primary, $lightness: 10%);
+    }
+
+    .inputs--filled label {
+        transform: translate(0, 0);
+    }
+
+    .inputs--invalid input,
+    .inputs--invalid select,
+    .inputs--invalid textarea {
+        border-bottom: 4px solid v.$color-secondary;
+        color: v.$color-secondary;
+        animation: shake 0.3s both ease-in-out;
+    }
+
+    .inputs--invalid label {
+        color: v.$color-secondary;
+    }
+}
+
+#form, #form-bottle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: v.$color-primary;
+    padding: 1rem;
+
+    .form-bottle {
+        @include form-basique(100%, 690px);
+
+        @include warming();
+
+        .form-content {
+            position: relative;
+            width: 100%;
+            display: flex;
+
+            @include mix(40%, 690px);
+
+            .all-form {
+                overflow: hidden;
+                padding: 1rem;
+                position: relative;
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 48%;
+                    height: 100%;
+
+                    @include input-label-effect();
+                }
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 48%;
+                    height: 100%;
+
+                    @include input-label-effect();
+
+                    textarea {
+                        height: 20rem;
+                        resize: vertical;
+                    }
+                }
+            }
+        }
+    }
+
+    .form {
+        @include form-basique();
+
+        @include warming();
+
+        .form-content {
+            position: relative;
+            width: 100%;
+            display: flex;
+
+            @include mix();
+
+            .all-form {
+                overflow: hidden;
+                padding: 10%;
+                position: relative;
+                width: 50%;
+
+                @include input-label-effect();
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #form {
+        .form {
+            .mix {
+                .headline {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #form, #form-bottle {
+        .form-bottle {
+            margin-top: 5rem;
+            @include form-basique(100%, none);
+
+            .form-content {
+                flex-direction: column;
+
+                @include mix(100%, 400px);
+
+                .all-form {
+                    padding: 5%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .left {
+                        width: 100%;
+                        span {
+                            text-align: center;
+
+                            input {
+                                text-align: center;
+                            }
+                        }
+                        .number, .selecte, .radio-inline-group {
+                            text-align: center;
+                        }
+                    }
+                    .right {
+                        width: 100%;
+                        textarea {
+                            height: 8rem;
+                            resize: vertical;
+                        }
+                        span {
+                            text-align: center;
+
+                            input {
+                                text-align: center;
+                            }
+                        }
+                        .number, .selecte, .radio-inline-group {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        .form {
+            flex-direction: column;
+            max-height: 750px;
+
+            .form-content {
+                .mix {
+                    width: 100%;
+                }
+
+                .all-form {
+                    padding: 5%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    span {
+                        text-align: center;
+
+                        input {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px) {
+    #form {
+        padding: 0;
+        .form {
+            width: 100%;
+        }
+    }
+}
