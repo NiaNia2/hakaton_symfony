@@ -1,14 +1,15 @@
 @use "../base/typographys";
 
-$font-source: "Source Sans Pro Regular", serif;
-$font-source-bold: "Source Sans Pro Bold", serif;
+$font-titre: 'Baloo';
+$font-autres: 'Coming';
 
-$color-primary:rgba(62, 0, 24, 1);
-$color-secondary:rgba(136, 0, 45, 1);
-$color-accent:rgba(136, 92, 126, 1);
+$color-primary: #c9aa8e;
+$color-secondary: #485884;
+$color-accent: #9cbeaa;
 
-$color-white: #F4F4F4;
-$color-black: #000;
+
+$color-white: #Fafdff;
+$color-black: #080606;
 
 $color-text-white: white;
 $color-text-black: black;
