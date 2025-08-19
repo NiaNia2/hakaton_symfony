@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as v;
+
+.cta {
+    padding: 1rem 1.5rem;
+    color: v.$color-white;
+    background-color: v.$color-primary;
+    border: solid 3px v.$color-primary;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta:hover {
+    background-color: v.$color-secondary;
+}
+
+.reset-btn {
+    flex: 0 0 auto;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid v.$color-accent;
+    border-radius: 4px;
+    color: v.$color-accent;
+    transition: all 0.2s ease-in-out;
+}
+
+.reset-btn:hover {
+    background-color: v.$color-accent;
+    color: v.$color-white;
+}
+
+.option-card {
+
+    button:hover,
+    a:hover,
+    input[type=submit]:hover {
+        background-color: v.$color-accent;
+        color: v.$color-white;
+    }
+
+    a,
+    button,
+    input[type=submit] {
+        flex: 0 0 auto;
+        padding: 0.3rem 0.5rem;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid v.$color-accent;
+        border-radius: 4px;
+        color: v.$color-accent;
+        transition: all 0.2s ease-in-out;
+    }
+}
