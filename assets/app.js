@@ -7,6 +7,8 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import './scripts/header';
+import './scripts/form';
+import './scripts/reset-btn';
 import './styles/app.scss';
 import 'htmx.org';
 window.htmx = require('htmx.org');

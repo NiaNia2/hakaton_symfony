@@ -9,5 +9,7 @@
   "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.24fc9d21.woff2",
   "build/app.css": "/build/app.css",
   "build/fonts/Baloo2-Bold.ttf": "/build/fonts/Baloo2-Bold.30b7d389.ttf",
-  "build/fonts/ComingSoon-Regular.ttf": "/build/fonts/ComingSoon-Regular.b0a0957c.ttf"
+  "build/fonts/ComingSoon-Regular.ttf": "/build/fonts/ComingSoon-Regular.b0a0957c.ttf",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.js"
 }

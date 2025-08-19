@@ -78,7 +78,6 @@
             width: 70%;
 
             mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
             mask-repeat: no-repeat;
             mask-size: 100% 100%;
             -webkit-mask-repeat: no-repeat;
@@ -168,7 +167,7 @@
         }
     }
 
-    .number, #region-field, #cepage-field, .selecte, .radio-inline-group, #image {
+    .number, #image {
         label {
             transform: translate(0, 0);
         }
@@ -358,9 +357,6 @@
                                 text-align: center;
                             }
                         }
-                        .number, .selecte, .radio-inline-group {
-                            text-align: center;
-                        }
                     }
                     .right {
                         width: 100%;
@@ -374,9 +370,6 @@
                             input {
                                 text-align: center;
                             }
-                        }
-                        .number, .selecte, .radio-inline-group {
-                            text-align: center;
                         }
                     }
                 }
