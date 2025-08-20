@@ -18,7 +18,7 @@
     flex-direction: column;
     color: v.$color-black;
     border-radius: 0.5rem;
-    background: v.$color-white;
+    background-image: url("../../../public/assets/images/game/Terrain/WaterSky.png");
     box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
 }
 
@@ -112,8 +112,6 @@
 
         label {
             width: 100%;
-            margin-left: -8px;
-            margin-right: -8px;
             height: 64px;
             padding-top: 12px;
             color: v.$color-primary;
@@ -122,10 +120,10 @@
             letter-spacing: .08rem;
             text-transform: uppercase;
             display: inline-block;
-            transform: translateY(1.25rem);
+            transform: translateY(1.1rem);
             background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Blue_3Slides.png");
-            background-size: cover;
-            background-repeat: round;
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
             text-align: center;
             transition: 0.15s ease;
         }
@@ -195,7 +193,7 @@
     }
 
     input[type=submit] {
-        margin: 1em auto 0;
+        margin: 0 auto 0;
         background-color: transparent;
         background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable_3Slides.png");
         background-size: contain;
@@ -267,6 +265,18 @@
                 background-repeat: round;
 
                 @include input-label-effect();
+
+                .form-group {
+                    .form-error {
+                        text-align: center;
+                        color: v.$color-error;
+                        font-family: v.$font-titre;
+
+                        ul {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
         }
     }
