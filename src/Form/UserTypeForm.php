@@ -17,7 +17,7 @@ class UserTypeForm extends AbstractType
         $isEdit = $options['is_edit'];
 
         $builder
-            ->add('userName', TextType::class, [
+            ->add('pseudo', TextType::class, [
                 'attr' => [
                     'minlength' => 3,
                     'maxlength' => 20,

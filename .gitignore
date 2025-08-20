@@ -22,10 +22,7 @@
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
-/public/build/app.css
-/public/build/app.js
-/public/build/entrypoints.json
-/public/build/manifest.json
+/public/build/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###

@@ -18,18 +18,18 @@
                 </div>
                 {{ form_start(userCreateForm, { attr: { class: 'all-form' } }) }}
                 <span>
-                        <label for="{{ userCreateForm.userName.vars.id }}">
+                        <label for="{{ userCreateForm.pseudo.vars.id }}">
                             Nom d'utilisateur
                         </label>
                         {% if userUpdateForm %}
-                            {{ form_widget(userCreateForm.userName, {
+                            {{ form_widget(userCreateForm.pseudo, {
                                 attr: {
-                                    'data-original': userCreateForm.userName.vars.value
+                                    'data-original': userCreateForm.pseudo.vars.value
                                 }
                             }) }}
                             <button type="button" class="reset-btn">↩</button>
                         {% else %}
-                            {{ form_widget(userCreateForm.userName) }}
+                            {{ form_widget(userCreateForm.pseudo) }}
                         {% endif %}
                     </span>
                 <span>
