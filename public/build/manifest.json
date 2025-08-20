@@ -9,19 +9,5 @@
   "build/fonts/fa-brands-400.woff2": "/build/fonts/fa-brands-400.1f6bad93.woff2",
   "build/fonts/ComingSoon-Regular.ttf": "/build/fonts/ComingSoon-Regular.b0a0957c.ttf",
   "build/fonts/fa-regular-400.woff2": "/build/fonts/fa-regular-400.5632c431.woff2",
-  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.24fc9d21.woff2",
-  "build/images/Carved_3Slides.png": "/build/images/Carved_3Slides.0d97f485.png",
-  "build/images/Banner_Horizontal.png": "/build/images/Banner_Horizontal.be005bc3.png",
-  "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
-  "build/images/Carved_9Slides.png": "/build/images/Carved_9Slides.8e607773.png",
-  "build/images/Banner_Vertical.png": "/build/images/Banner_Vertical.bce03c8a.png",
-  "build/images/Ribbon_Blue_3Slides.png": "/build/images/Ribbon_Blue_3Slides.116fbc3c.png",
-  "build/images/Button_Disable_9Slides.png": "/build/images/Button_Disable_9Slides.31b1c8bf.png",
-  "build/images/Button_Hover_3Slides.png": "/build/images/Button_Hover_3Slides.94e816fe.png",
-  "build/images/Button_Hover.png": "/build/images/Button_Hover.bb947d32.png",
-  "build/images/Button_Disable_3Slides.png": "/build/images/Button_Disable_3Slides.3b1e1db8.png",
-  "build/images/Banner_Connection_Down.png": "/build/images/Banner_Connection_Down.d41c7c42.png",
-  "build/images/Ribbon_Blue_Connection_Down.png": "/build/images/Ribbon_Blue_Connection_Down.a5cd2b54.png",
-  "build/images/Ribbon_Yellow_3Slides.png": "/build/images/Ribbon_Yellow_3Slides.7a750d4f.png",
-  "build/images/Ribbon_Red_3Slides.png": "/build/images/Ribbon_Red_3Slides.c075a279.png"
+  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.24fc9d21.woff2"
 }

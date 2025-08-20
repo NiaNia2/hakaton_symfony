@@ -16,6 +16,14 @@
         justify-content: space-between;
         align-items: center;
 
+        .logo-container {
+            width: 10%;
+            min-width: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
 
         .navbar_menu {
             .navbar_list_container {
@@ -28,6 +36,15 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    gap: 1rem;
+
+                    li a {
+                        transition: all 0.2 ease;
+                    }
+
+                    li a:hover {
+                        color: v.$color-accent;
+                    }
                 }
 
                 .dropdown {
