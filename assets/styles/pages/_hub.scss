@@ -19,19 +19,19 @@
     }
 }
 
-#hub {
+#island {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    .hub {
+    .island {
         width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5rem;
-        .hub-title {
+        .island-title {
             @include ribbon();
             h2 {
                 font-size: 2rem;
@@ -39,8 +39,27 @@
         }
         .team-container {
             width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .hub-team {
                 @include ribbon("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1991px) {
+    #island {
+        .island {
+            .island-title {
+                width: 50%;
+            }
+            .team-container {
+                .hub-team {
+                   width: 50%;
+                }
             }
         }
     }
