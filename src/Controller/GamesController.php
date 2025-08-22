@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class GamesController extends AbstractController
 {
-    #[Route('/hub/{id}', name: 'hub')]
-    public function hub(User $user): Response
+    #[Route('/island/{id}', name: 'island')]
+    public function island(User $user): Response
     {
         $team = $user->getTeams();
-        return $this->render('games/hub.html.twig', [
+        return $this->render('games/island.html.twig', [
             'team' => $team,
             'user' => $user,
         ]);
