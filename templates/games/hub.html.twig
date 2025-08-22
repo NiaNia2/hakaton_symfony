@@ -2,13 +2,31 @@
 
 {% block title %}
     {% if app.user.id == team.user.id%}
-        Mon hub
+        Mon île
     {% else %}
-        Hub de {{ user.pseudo }}
+        Île de {{ user.pseudo }}
     {% endif %}
 {% endblock %}
 
 {% block body %}
-    <p>{{ team.unitOne }}</p>
-    <p>{{ user.pseudo }}</p>
+    <section id="hub">
+        <div class="hub">
+            <div class="hub-title">
+                {% if app.user.id == team.user.id%}
+                    <h2>Mon île</h2>
+                {% else %}
+                    <h2>Île de {{ user.pseudo }}</h2>
+                {% endif %}
+            </div>
+            <div class="team-container">
+                <div class="hub-team">
+                    {% if app.user.id == team.user.id%}
+                        <h2>Mon équipe</h2>
+                    {% else %}
+                        <h2>Équipe de {{ user.pseudo }}</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
