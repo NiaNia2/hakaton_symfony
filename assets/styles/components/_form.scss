@@ -96,9 +96,9 @@
             text-align: center;
 
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem;
             border-radius: 1rem;
             width: 70%;
@@ -111,7 +111,7 @@
 
             .text-headline {
                 color: v.$color-primary;
-                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+                text-shadow: 2px 2px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 letter-spacing: 0.4rem;
@@ -121,7 +121,7 @@
                 font-size: 0.8rem;
                 text-transform: uppercase;
                 letter-spacing: 0.14rem;
-                text-shadow: 2px 2px 2px v.$color-black;
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
             }
         }
     }
