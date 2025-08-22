@@ -13,18 +13,25 @@
     width: $width;
     max-width: 1200px;
     max-height: $height;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     color: v.$color-black;
-    border-radius: 0.5rem;
-    background-image: url("../../../public/assets/images/game/Terrain/WaterSky.png");
-    box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
+    background-image: url("../../../public/assets/images/game/Terrain/tilemap.png");
+    background-size: 453px 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
 }
 
 @mixin warming() {
     .warming {
+        margin-bottom: 5rem;
+        min-width: 360px;
         width: 100%;
+        max-width: 675px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .alert {
             background-color: color.adjust(v.$color-secondary, $lightness: -10%);
             padding: 1rem;
@@ -34,15 +41,28 @@
         }
 
         .mb-3 {
+            width: 100%;
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            height: 64px;
+            background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
+            font-family: v.$font-titre;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
             font-size: 0.95rem;
             text-align: center;
-            a {
-                color: color.adjust(v.$color-secondary, $lightness: +20%);
-                text-decoration: underline;
+            color: v.$color-primary;
+            span {
+                width: 60%;
             }
-        }
-        .mb-3:hover {
-            color: v.$color-white;
+            a {
+                color: v.$color-white;
+            }
         }
     }
 }
@@ -52,13 +72,18 @@
         position: relative;
         width: $width;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: start;
 
         figure {
-            width: 100%;
+            width: 212px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
             margin: 0;
-            transform: scale(0.6);
             img {
-                min-height: $height;
+                min-height: 450px;
                 max-height: $height;
             }
         }
@@ -76,7 +101,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 1rem;
             border-radius: 1rem;
-            color: white;
             width: 70%;
 
             mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
@@ -87,22 +111,26 @@
 
             .text-headline {
                 color: v.$color-primary;
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 letter-spacing: 0.4rem;
             }
             .text-subheadline {
-                color: v.$color-secondary;
+                color: v.$color-error;
                 font-size: 0.8rem;
                 text-transform: uppercase;
                 letter-spacing: 0.14rem;
-                text-shadow: 2px 2px 2px v.$color-accent;
+                text-shadow: 2px 2px 2px v.$color-black;
             }
         }
     }
 }
 
 @mixin input-label-effect() {
+    span:first-child {
+        padding-top: 5%;
+    }
     span {
         width: 100%;
         display: block;
@@ -126,6 +154,10 @@
             background-position: -5px;
             text-align: center;
             transition: 0.15s ease;
+            span:last-child {
+                margin: -5px 0 0;
+                padding: 0 4rem 0;
+            }
         }
 
         .input-reset-inline {
@@ -193,11 +225,8 @@
     }
 
     input[type=submit] {
-        margin: 0 auto 0;
+        margin: 0 auto 25px;
         background-color: transparent;
-        background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable_3Slides.png");
-        background-size: contain;
-        background-repeat: round;
         color: v.$color-white;
         border: none;
         padding: 10px 2rem 14px;
@@ -205,12 +234,6 @@
         cursor: pointer;
         transition: background 0.3s;
         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
-    }
-    input[type=submit]:hover,
-    input[type=submit]:focus {
-        background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Hover_3Slides.png");
-        background-size: contain;
-        background-repeat: round;
     }
 
     .inputs--filled label {
@@ -232,22 +255,23 @@
 
 #form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: v.$color-primary;
     padding: 1rem;
-
+    @include warming();
     .form {
         @include form-basique();
 
-        @include warming();
+
 
         .form-content {
             position: relative;
             width: 100%;
             display: flex;
+            padding-bottom: 10rem;
 
             @include mix();
 
@@ -261,8 +285,9 @@
                 justify-content: center;
                 align-items: center;
                 background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable_9Slides.png");
-                background-size: contain;
-                background-repeat: round;
+                background-size: calc(100% + 10px) 100%;
+                background-repeat: no-repeat;
+                background-position: -5px;
 
                 @include input-label-effect();
 
@@ -282,9 +307,18 @@
     }
 }
 
+@media screen and (min-width:1991px) {
+    #form {
+        .form {
+            width: 35%;
+        }
+    }
+}
+
 @media screen and (max-width:1000px) {
     #form {
         .form {
+            width: 95%;
             .mix {
                 .headline {
                     width: 100%;
@@ -296,17 +330,22 @@
 
 @media screen and (max-width:768px) {
     #form {
+        padding: 0;
         .form {
+            width: 75%;
             flex-direction: column;
+            background-size: 100% 80%;
             max-height: 750px;
 
+
             .form-content {
+                flex-direction: column;
                 .mix {
                     width: 100%;
                 }
 
                 .all-form {
-                    padding: 5%;
+                    padding: 10%;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -325,11 +364,45 @@
     }
 }
 
-@media screen and (max-width:360px) {
+@media screen and (max-width:600px) {
     #form {
-        padding: 0;
         .form {
             width: 100%;
+            .form-content {
+                .all-form {
+                    .form-group {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .form-error {
+                            width: 95%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px) {
+    #form {
+        .form {
+            .form-content {
+                .all-form {
+                    padding: 0;
+
+                    span:first-child {
+                        padding-top: 14%;
+                    }
+                    span {
+                        padding: 0 10%;
+                    }
+                    input[type=submit] {
+                        margin-bottom: 80px;
+                    }
+                }
+            }
         }
     }
 }

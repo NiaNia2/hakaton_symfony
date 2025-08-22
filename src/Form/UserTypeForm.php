@@ -43,7 +43,7 @@ class UserTypeForm extends AbstractType
                         'title' => 'Au moins 1 majuscule, 1 chiffre et 1 caractère spécial',
                     ],
                     'constraints' => [
-                        new Assert\NotBlank(message: 'Le mot de passe est obligatoire'),
+                        ...(!$isEdit ? [new Assert\NotBlank(['message' => 'Le mot de passe est obligatoire'])] : []),
                         new Assert\Length(min: 8, minMessage: 'Le mot de passe doit contenir au moins {{ limit }} caractères'),
                         new Assert\Regex('/[A-Z]/', 'Ajoutez au moins une majuscule.'),
                         new Assert\Regex('/\d/',   'Ajoutez au moins un chiffre.'),
@@ -52,7 +52,8 @@ class UserTypeForm extends AbstractType
                     ],
                 ],
                 'second_options' => [
-                    'label' => 'Confirmation du mot de passe',
+                    'label_html' => true,
+                    'label' => '<span>Confirmation du mot de passe</span>',
                 ],
             ])
         ;

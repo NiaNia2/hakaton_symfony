@@ -4,22 +4,23 @@
 
 {% block body %}
     <div id="form">
-        <form method="post" class="form">
-            <div class="warming">
-                {% if error %}
-                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
+        <div class="warming">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
 
-                {% if app.user %}
-                    <div class="mb-3">
-                        Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-                    </div>
-                {% endif %}
-            </div>
+            {% if app.user %}
+                <div class="mb-3">
+                    <span>Vous êtes connecté en tant que {{ app.user.userIdentifier }}</span>
+                    <a href="{{ path('app_logout') }}" class="btn btn-warming">Se déconnecter</a>
+                </div>
+            {% endif %}
+        </div>
+        <form method="post" class="form">
             <div class="form-content">
                 <div class="mix">
                     <figure>
-                        <img src="{{ asset('images/form/login.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/game/Buildings/yellow Buildings/Tower.png') }}" alt="">
                     </figure>
 
                     <div class="headline">
