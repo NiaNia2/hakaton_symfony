@@ -43,8 +43,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .hub-team {
+            .team-owner {
                 @include ribbon("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+            }
+            .team-card {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-image: url("../../../public/assets/images/game/Terrain/Tilemap_Flat.png");
+                .unit-card {
+                    width: 30%;
+                }
             }
         }
     }
@@ -57,7 +67,7 @@
                 width: 50%;
             }
             .team-container {
-                .hub-team {
+                .team-owner {
                    width: 50%;
                 }
             }

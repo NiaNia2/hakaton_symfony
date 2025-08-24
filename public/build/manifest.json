@@ -12,6 +12,7 @@
   "build/fonts/fa-regular-400.woff2": "/build/fonts/fa-regular-400.5632c431.woff2",
   "build/images/tilemap.png": "/build/images/tilemap.c608755b.png",
   "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.24fc9d21.woff2",
+  "build/images/Ribbon_Yellow_3Slides.png": "/build/images/Ribbon_Yellow_3Slides.7a750d4f.png",
   "build/images/Ribbon_Red_3Slides.png": "/build/images/Ribbon_Red_3Slides.c075a279.png",
   "build/images/Ribbon_Blue_3Slides.png": "/build/images/Ribbon_Blue_3Slides.116fbc3c.png",
   "build/images/Button_Disable_9Slides.png": "/build/images/Button_Disable_9Slides.31b1c8bf.png",
@@ -20,5 +21,5 @@
   "build/images/Button_Disable_3Slides.png": "/build/images/Button_Disable_3Slides.3b1e1db8.png",
   "build/images/Button_Hover.png": "/build/images/Button_Hover.bb947d32.png",
   "build/images/Button_Disable.png": "/build/images/Button_Disable.b32a13a8.png",
-  "build/images/Ribbon_Yellow_3Slides.png": "/build/images/Ribbon_Yellow_3Slides.7a750d4f.png"
+  "build/images/Tilemap_Flat.png": "/build/images/Tilemap_Flat.dfde89d9.png"
 }

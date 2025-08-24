@@ -19,12 +19,26 @@
                 {% endif %}
             </div>
             <div class="team-container">
-                <div class="hub-team">
+                <div class="team-owner">
                     {% if app.user.id == team.user.id%}
                         <h2>Mon équipe</h2>
                     {% else %}
                         <h2>Équipe de {{ user.pseudo }}</h2>
                     {% endif %}
+                </div>
+                <div class="team-card">
+                    <div class="unit-card">
+                        <h3>{{ team.unitOne.type }}</h3>
+                        <p>{{ team.unitOne.description}}</p>
+                    </div>
+                    <div class="unit-card">
+                        <h3>{{ team.unitTwo.type }}</h3>
+                        <p>{{ team.unitTwo.description}}</p>
+                    </div>
+                    <div class="unit-card">
+                        <h3>{{ team.unitThree.type }}</h3>
+                        <p>{{ team.unitThree.description}}</p>
+                    </div>
                 </div>
             </div>
         </div>
