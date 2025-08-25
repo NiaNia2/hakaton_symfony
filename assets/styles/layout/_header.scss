@@ -1,19 +1,34 @@
 @use "../abstracts/variables" as v;
 
+:root {
+    --navbar-height: 100px;
+}
+
 #header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     width: 100%;
+    height: var(--navbar-height);
     display: flex;
     justify-content: center;
+    background-color: v.$color-secondary;
 
     .header {
         width: 95%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
 
         .navbar_menu {
             .navbar_list_container {
@@ -26,6 +41,15 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    gap: 1rem;
+
+                    li a {
+                        transition: all 0.2 ease;
+                    }
+
+                    li a:hover {
+                        color: v.$color-accent;
+                    }
                 }
 
                 .dropdown {
@@ -33,13 +57,22 @@
                     display: none;
                     margin-right: 5rem;
                     transition: display 5s ease-out;
+
                     i {
                         color: v.$color-secondary;
-                    };
-                };
+                    }
+
+                    ;
+                }
+
+                ;
+
                 .dropdown:hover {
                     cursor: pointer;
-                };
+                }
+
+                ;
+
                 .dropdown-content {
                     position: absolute;
                     z-index: 1;
@@ -56,7 +89,9 @@
                     li a:hover {
                         border-bottom: 1px solid v.$color-secondary;
                     }
-                };
+                }
+
+                ;
             }
         }
     }
@@ -64,17 +99,13 @@
 
 @media screen and (min-width:1921px) {
     #header {
-        .header {
-
-        }
+        .header {}
     }
 }
 
 @media screen and (max-width:1250px) {
     #header {
-        .header {
-
-        }
+        .header {}
     }
 }
 
@@ -86,10 +117,13 @@
                     .navbar_list {
                         display: none;
                     }
+
                     .dropdown {
                         position: relative;
                         display: inherit;
-                    };
+                    }
+
+                    ;
                 }
             }
         }
@@ -98,16 +132,12 @@
 
 @media screen and (max-width:525px) {
     #header {
-        .header {
-
-        }
+        .header {}
     }
 }
 
 @media screen and (max-width:453px) {
     #header {
-        .header {
-
-        }
+        .header {}
     }
 }

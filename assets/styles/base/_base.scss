@@ -12,13 +12,18 @@ html {
 body {
     position: relative;
     margin: 0 auto;
-    font-family: v.$font-source;
-    background: v.$color-white;
-    color: v.$color-text-black;
+    font-family: v.$font-autres;
+    color: v.$color-black;
 }
 
 main {
+    padding-top: var(--navbar-height);
     width: 100%;
+    background-image: url("../../../public/assets/images/game/Terrain/WaterSky.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-position: 50% 0;
+    background-color: v.$color-water;
 }
 
 section {
@@ -34,10 +39,10 @@ img {
 
 ul {
     list-style: none;
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 a {
     text-decoration: none;
-    color: v.$color-text-black;
+    color: v.$color-black;
 }

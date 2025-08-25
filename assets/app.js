@@ -1,11 +1,14 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@fortawesome/fontawesome-free/js/all.js';
 /*
  * Welcome to your app's main JavaScript file!
  *
  * This file will be included onto the page via the importmap() Twig function,
  * which should already be in your base.html.twig.
  */
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-free/js/all.js';
+import './scripts/header';
+import './scripts/form';
+import './scripts/reset-btn';
 import './styles/app.scss';
 import 'htmx.org';
 window.htmx = require('htmx.org');
