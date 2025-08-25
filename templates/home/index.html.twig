@@ -9,7 +9,7 @@
 			{% if app.user %}
 				<div class="titre">
 					<h1>Bienvenue
-						{{ app.user.userIdentifier }}</h1>
+						{{ app.user.pseudo }}</h1>
 				</div>
 			{% endif %}
 			<div class="banner-content">
@@ -35,7 +35,7 @@
 			<div class="btn-container">
 
 				{% if app.user %}
-					<a class="btn-home" href="#">Lancer un combat</a>
+					<a class="btn-home" href="{{ path('games')}}">Lancer un combat</a>
 				{% else %}
 					<a class="btn-home" href="{{ path('create_user') }}">Inscription</a>
 					<a class="btn-home" href="{{ path('app_login') }}">Connexion</a>
