@@ -130,7 +130,7 @@ class Units
     /**
      * @return Collection<int, Teams>
      */
-    public function getTeamsOne(): Collection
+    public function getTeamOne(): Collection
     {
         return $this->teamOne;
     }
@@ -160,7 +160,7 @@ class Units
     /**
      * @return Collection<int, Teams>
      */
-    public function getTeamsTwo(): Collection
+    public function getTeamTwo(): Collection
     {
         return $this->teamTwo;
     }
@@ -169,7 +169,7 @@ class Units
     {
         if (!$this->teamTwo->contains($teamTwo)) {
             $this->teamTwo->add($teamTwo);
-            $teamTwo->setUnitOne($this);
+            $teamTwo->setUnitTwo($this);
         }
 
         return $this;

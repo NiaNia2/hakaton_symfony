@@ -1,0 +1,12 @@
+{% for unit in colors %}
+    {% set selected = '' %}
+    {% if unit.type == unitOneType and unit.color == unitOneColor %}
+        {% set selected = 'selected' %}
+    {% elseif unit.type == unitTwoType and unit.color == unitTwoColor %}
+        {% set selected = 'selected' %}
+    {% elseif unit.type == unitThreeType and unit.color == unitThreeColor %}
+        {% set selected = 'selected' %}
+    {% endif %}
+
+    <option value="{{ unit.color }}" {{ selected }}>{{ unit.color }}</option>
+{% endfor %}

@@ -17,10 +17,10 @@ class Teams
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\ManyToOne(inversedBy: 'teams')]
+    #[ORM\ManyToOne(inversedBy: 'teamOne')]
     private ?Units $unitOne = null;
 
-    #[ORM\ManyToOne(inversedBy: 'teams')]
+    #[ORM\ManyToOne(inversedBy: 'teamTwo')]
     private ?Units $unitTwo = null;
 
     #[ORM\ManyToOne(inversedBy: 'teamThree')]
