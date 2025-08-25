@@ -1,11 +1,16 @@
 @use "../abstracts/variables" as v;
 
+:root {
+    --navbar-height: 100px;
+}
+
 #header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     width: 100%;
+    height: var(--navbar-height);
     display: flex;
     justify-content: center;
     background-color: v.$color-secondary;
@@ -17,8 +22,8 @@
         align-items: center;
 
         .logo-container {
-            width: 10%;
-            min-width: 70px;
+            width: 100px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -42,9 +47,6 @@
                         transition: all 0.2 ease;
                     }
 
-                    li a:hover {
-                        color: v.$color-accent;
-                    }
                 }
 
                 .dropdown {
