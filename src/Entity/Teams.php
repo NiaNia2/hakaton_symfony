@@ -17,6 +17,15 @@ class Teams
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[ORM\ManyToOne(inversedBy: 'teams')]
+    private ?Units $unitOne = null;
+
+    #[ORM\ManyToOne(inversedBy: 'teams')]
+    private ?Units $unitTwo = null;
+
+    #[ORM\ManyToOne(inversedBy: 'teamThree')]
+    private ?Units $unitThree = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -30,6 +39,42 @@ class Teams
     public function setUser(User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getUnitOne(): ?Units
+    {
+        return $this->unitOne;
+    }
+
+    public function setUnitOne(?Units $unitOne): static
+    {
+        $this->unitOne = $unitOne;
+
+        return $this;
+    }
+
+    public function getUnitTwo(): ?Units
+    {
+        return $this->unitTwo;
+    }
+
+    public function setUnitTwo(?Units $unitTwo): static
+    {
+        $this->unitTwo = $unitTwo;
+
+        return $this;
+    }
+
+    public function getUnitThree(): ?Units
+    {
+        return $this->unitThree;
+    }
+
+    public function setUnitThree(?Units $unitThree): static
+    {
+        $this->unitThree = $unitThree;
 
         return $this;
     }
