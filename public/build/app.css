@@ -5,12 +5,10 @@
   font-family: "Baloo";
   src: url(/build/fonts/Baloo2-Bold.30b7d389.ttf);
 }
-
 @font-face {
   font-family: "Coming";
   src: url(/build/fonts/ComingSoon-Regular.b0a0957c.ttf);
 }
-
 #header {
   position: fixed;
   top: 0;
@@ -21,14 +19,12 @@
   justify-content: center;
   background-color: #485884;
 }
-
 #header .header {
   width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 #header .header .logo-container {
   width: 10%;
   min-width: 70px;
@@ -37,44 +33,36 @@
   align-items: center;
   transition: transform 0.3s ease-in-out;
 }
-
 #header .header .navbar_menu .navbar_list_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
-
 #header .header .navbar_menu .navbar_list_container .navbar_list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
-
 #header .header .navbar_menu .navbar_list_container .navbar_list li a {
   transition: all 0.2 ease;
 }
-
 #header .header .navbar_menu .navbar_list_container .navbar_list li a:hover {
   color: #9cbeaa;
 }
-
 #header .header .navbar_menu .navbar_list_container .dropdown {
   position: relative;
   display: none;
   margin-right: 5rem;
   transition: display 5s ease-out;
 }
-
 #header .header .navbar_menu .navbar_list_container .dropdown i {
   color: #485884;
 }
-
 #header .header .navbar_menu .navbar_list_container .dropdown:hover {
   cursor: pointer;
 }
-
 #header .header .navbar_menu .navbar_list_container .dropdown-content {
   position: absolute;
   z-index: 1;
@@ -88,7 +76,6 @@
   box-shadow: 0 10px 15px 12px #9cbeaa;
   transform: translate(-45%, 2%);
 }
-
 #header .header .navbar_menu .navbar_list_container .dropdown-content li a:hover {
   border-bottom: 1px solid #485884;
 }
@@ -97,13 +84,11 @@
   #header .header .navbar__menu .navbar_list_container .navbar_list {
     display: none;
   }
-
   #header .header .navbar__menu .navbar_list_container .dropdown {
     position: relative;
     display: inherit;
   }
 }
-
 #footer {
   margin-top: 5rem;
   width: 100%;
@@ -113,7 +98,6 @@
   align-items: center;
   background-color: #485884;
 }
-
 #footer .footer {
   margin-top: 3rem;
   width: 90%;
@@ -122,7 +106,6 @@
   justify-content: center;
   align-items: center;
 }
-
 #footer .footer .logo-footer-container {
   display: flex;
   justify-content: center;
@@ -130,7 +113,6 @@
   width: 13%;
   transition: all 0.2s ease-in-out;
 }
-
 #footer .footer .footer-content {
   margin-top: 1rem;
   position: relative;
@@ -140,11 +122,9 @@
   align-items: center;
   gap: 15rem;
 }
-
 #footer .footer .footer-content .footer-list li a:hover {
   border-bottom: 1px solid #Fafdff;
 }
-
 #footer .footer .footer-content .footer-contact::before {
   content: "";
   position: absolute;
@@ -159,34 +139,28 @@
     width: 10%;
   }
 }
-
 @media screen and (max-width: 768px) {
   #footer .footer {
     width: 95%;
     text-align: center;
   }
-
   #footer .footer .logo-footer-container {
     width: 20%;
   }
-
   #footer .footer .footer-content {
     flex-direction: column;
     gap: 2rem;
   }
-
   #footer .footer .footer-content .footer-contact::before {
     content: "";
     display: none;
   }
 }
-
 @media screen and (max-width: 453px) {
   #footer .footer .logo-footer-container {
     width: 45%;
   }
 }
-
 .cta {
   padding: 1rem 1.5rem;
   color: #Fafdff;
@@ -222,7 +196,6 @@
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
 .option-card a,
 .option-card button,
 .option-card input[type=submit] {
@@ -240,22 +213,17 @@
   0% {
     transform: translateX(0);
   }
-
   33% {
     transform: translateX(-6px);
   }
-
   66% {
     transform: translateX(6px);
   }
-
   100% {
     transform: translateX(0);
   }
 }
-
-#form,
-#form-bottle {
+#form, #form-bottle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,9 +232,7 @@
   background: #c9aa8e;
   padding: 1rem;
 }
-
-#form .form-bottle,
-#form-bottle .form-bottle {
+#form .form-bottle, #form-bottle .form-bottle {
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -279,65 +245,45 @@
   background: #Fafdff;
   box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
 }
-
-#form .form-bottle .warming,
-#form-bottle .form-bottle .warming {
+#form .form-bottle .warming, #form-bottle .form-bottle .warming {
   width: 100%;
 }
-
-#form .form-bottle .warming .alert,
-#form-bottle .form-bottle .warming .alert {
+#form .form-bottle .warming .alert, #form-bottle .form-bottle .warming .alert {
   background-color: #364263;
   padding: 1rem;
   border-radius: 6px 6px 0 0;
   border: solid 3px #c9aa8e;
   text-align: center;
 }
-
-#form .form-bottle .warming .mb-3,
-#form-bottle .form-bottle .warming .mb-3 {
+#form .form-bottle .warming .mb-3, #form-bottle .form-bottle .warming .mb-3 {
   font-size: 0.95rem;
   text-align: center;
 }
-
-#form .form-bottle .warming .mb-3 a,
-#form-bottle .form-bottle .warming .mb-3 a {
+#form .form-bottle .warming .mb-3 a, #form-bottle .form-bottle .warming .mb-3 a {
   color: #7b8bb7;
   text-decoration: underline;
 }
-
-#form .form-bottle .warming .mb-3:hover,
-#form-bottle .form-bottle .warming .mb-3:hover {
+#form .form-bottle .warming .mb-3:hover, #form-bottle .form-bottle .warming .mb-3:hover {
   color: #Fafdff;
 }
-
-#form .form-bottle .form-content,
-#form-bottle .form-bottle .form-content {
+#form .form-bottle .form-content, #form-bottle .form-bottle .form-content {
   position: relative;
   width: 100%;
   display: flex;
 }
-
-#form .form-bottle .form-content .mix,
-#form-bottle .form-bottle .form-content .mix {
+#form .form-bottle .form-content .mix, #form-bottle .form-bottle .form-content .mix {
   position: relative;
   width: 40%;
   overflow: hidden;
 }
-
-#form .form-bottle .form-content .mix figure,
-#form-bottle .form-bottle .form-content .mix figure {
+#form .form-bottle .form-content .mix figure, #form-bottle .form-bottle .form-content .mix figure {
   width: 100%;
 }
-
-#form .form-bottle .form-content .mix figure img,
-#form-bottle .form-bottle .form-content .mix figure img {
+#form .form-bottle .form-content .mix figure img, #form-bottle .form-bottle .form-content .mix figure img {
   min-height: 690px;
   max-height: 690px;
 }
-
-#form .form-bottle .form-content .mix .headline,
-#form-bottle .form-bottle .form-content .mix .headline {
+#form .form-bottle .form-content .mix .headline, #form-bottle .form-bottle .form-content .mix .headline {
   position: absolute;
   top: 8%;
   left: 50%;
@@ -357,26 +303,20 @@
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
 }
-
-#form .form-bottle .form-content .mix .headline .text-headline,
-#form-bottle .form-bottle .form-content .mix .headline .text-headline {
+#form .form-bottle .form-content .mix .headline .text-headline, #form-bottle .form-bottle .form-content .mix .headline .text-headline {
   color: #c9aa8e;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
 }
-
-#form .form-bottle .form-content .mix .headline .text-subheadline,
-#form-bottle .form-bottle .form-content .mix .headline .text-subheadline {
+#form .form-bottle .form-content .mix .headline .text-subheadline, #form-bottle .form-bottle .form-content .mix .headline .text-subheadline {
   color: #485884;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.14rem;
   text-shadow: 2px 2px 2px #9cbeaa;
 }
-
-#form .form-bottle .form-content .all-form,
-#form-bottle .form-bottle .form-content .all-form {
+#form .form-bottle .form-content .all-form, #form-bottle .form-bottle .form-content .all-form {
   overflow: hidden;
   padding: 1rem;
   position: relative;
@@ -386,25 +326,19 @@
   align-items: center;
   gap: 1rem;
 }
-
-#form .form-bottle .form-content .all-form .left,
-#form-bottle .form-bottle .form-content .all-form .left {
+#form .form-bottle .form-content .all-form .left, #form-bottle .form-bottle .form-content .all-form .left {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 48%;
   height: 100%;
 }
-
-#form .form-bottle .form-content .all-form .left span,
-#form-bottle .form-bottle .form-content .all-form .left span {
+#form .form-bottle .form-content .all-form .left span, #form-bottle .form-bottle .form-content .all-form .left span {
   display: block;
   margin-bottom: 1.15rem;
   position: relative;
 }
-
-#form .form-bottle .form-content .all-form .left span label,
-#form-bottle .form-bottle .form-content .all-form .left span label {
+#form .form-bottle .form-content .all-form .left span label, #form-bottle .form-bottle .form-content .all-form .left span label {
   color: #c9aa8e;
   font-family: "Baloo", sans-serif;
   font-size: 0.75rem;
@@ -414,29 +348,19 @@
   transform: translateY(1.25rem);
   transition: 0.15s ease;
 }
-
-#form .form-bottle .form-content .all-form .left span .input-reset-inline,
-#form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline {
+#form .form-bottle .form-content .all-form .left span .input-reset-inline, #form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
 #form .form-bottle .form-content .all-form .left span .input-reset-inline input,
 #form .form-bottle .form-content .all-form .left span .input-reset-inline select,
-#form .form-bottle .form-content .all-form .left span .input-reset-inline textarea,
-#form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline input,
+#form .form-bottle .form-content .all-form .left span .input-reset-inline textarea, #form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline input,
 #form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline select,
 #form-bottle .form-bottle .form-content .all-form .left span .input-reset-inline textarea {
   flex: 1 1 auto;
 }
-
-#form .form-bottle .form-content .all-form .left span input,
-#form .form-bottle .form-content .all-form .left span select,
-#form .form-bottle .form-content .all-form .left span textarea,
-#form-bottle .form-bottle .form-content .all-form .left span input,
-#form-bottle .form-bottle .form-content .all-form .left span select,
-#form-bottle .form-bottle .form-content .all-form .left span textarea {
+#form .form-bottle .form-content .all-form .left span input, #form .form-bottle .form-content .all-form .left span select, #form .form-bottle .form-content .all-form .left span textarea, #form-bottle .form-bottle .form-content .all-form .left span input, #form-bottle .form-bottle .form-content .all-form .left span select, #form-bottle .form-bottle .form-content .all-form .left span textarea {
   flex: 1;
   width: 100%;
   border: none;
@@ -448,21 +372,15 @@
   outline: none;
   resize: none;
 }
-
 #form .form-bottle .form-content .all-form .left span input:focus-visible,
 #form .form-bottle .form-content .all-form .left span select:focus-visible,
-#form .form-bottle .form-content .all-form .left span textarea:focus-visible,
-#form-bottle .form-bottle .form-content .all-form .left span input:focus-visible,
+#form .form-bottle .form-content .all-form .left span textarea:focus-visible, #form-bottle .form-bottle .form-content .all-form .left span input:focus-visible,
 #form-bottle .form-bottle .form-content .all-form .left span select:focus-visible,
 #form-bottle .form-bottle .form-content .all-form .left span textarea:focus-visible {
   outline: none;
   border-bottom-color: rgb(233.9820359281, 221.9161676647, 211.0179640719);
 }
-
-#form .form-bottle .form-content .all-form .left span #bottles_type_form_bio,
-#form .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite,
-#form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_bio,
-#form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite {
+#form .form-bottle .form-content .all-form .left span #bottles_type_form_bio, #form .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite, #form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_bio, #form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -475,23 +393,13 @@
   outline: none;
   resize: none;
 }
-
-#form .form-bottle .form-content .all-form .left span #bottles_type_form_bio input[type=radio],
-#form .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite input[type=radio],
-#form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_bio input[type=radio],
-#form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite input[type=radio] {
+#form .form-bottle .form-content .all-form .left span #bottles_type_form_bio input[type=radio], #form .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite input[type=radio], #form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_bio input[type=radio], #form-bottle .form-bottle .form-content .all-form .left span #bottles_type_form_sulfite input[type=radio] {
   accent-color: #9cbeaa;
 }
-
-#form .form-bottle .form-content .all-form .left .number label,
-#form .form-bottle .form-content .all-form .left #image label,
-#form-bottle .form-bottle .form-content .all-form .left .number label,
-#form-bottle .form-bottle .form-content .all-form .left #image label {
+#form .form-bottle .form-content .all-form .left .number label, #form .form-bottle .form-content .all-form .left #image label, #form-bottle .form-bottle .form-content .all-form .left .number label, #form-bottle .form-bottle .form-content .all-form .left #image label {
   transform: translate(0, 0);
 }
-
-#form .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button,
-#form-bottle .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button {
+#form .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button, #form-bottle .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button {
   background-color: transparent;
   color: #9cbeaa;
   border: none;
@@ -499,15 +407,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button:hover,
-#form-bottle .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button:hover {
+#form .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button:hover, #form-bottle .form-bottle .form-content .all-form .left input[type=file]::-webkit-file-upload-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form-bottle .form-content .all-form .left input[type=file]::file-selector-button,
-#form-bottle .form-bottle .form-content .all-form .left input[type=file]::file-selector-button {
+#form .form-bottle .form-content .all-form .left input[type=file]::file-selector-button, #form-bottle .form-bottle .form-content .all-form .left input[type=file]::file-selector-button {
   padding: 0.3rem 0.5rem;
   background-color: transparent;
   color: #9cbeaa;
@@ -516,15 +420,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .left input[type=file]::file-selector-button:hover,
-#form-bottle .form-bottle .form-content .all-form .left input[type=file]::file-selector-button:hover {
+#form .form-bottle .form-content .all-form .left input[type=file]::file-selector-button:hover, #form-bottle .form-bottle .form-content .all-form .left input[type=file]::file-selector-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form-bottle .form-content .all-form .left input[type=submit],
-#form-bottle .form-bottle .form-content .all-form .left input[type=submit] {
+#form .form-bottle .form-content .all-form .left input[type=submit], #form-bottle .form-bottle .form-content .all-form .left input[type=submit] {
   margin: 1em auto 0;
   background: #c9aa8e;
   color: #Fafdff;
@@ -534,53 +434,39 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-
 #form .form-bottle .form-content .all-form .left input[type=submit]:hover,
-#form .form-bottle .form-content .all-form .left input[type=submit]:focus,
-#form-bottle .form-bottle .form-content .all-form .left input[type=submit]:hover,
+#form .form-bottle .form-content .all-form .left input[type=submit]:focus, #form-bottle .form-bottle .form-content .all-form .left input[type=submit]:hover,
 #form-bottle .form-bottle .form-content .all-form .left input[type=submit]:focus {
   background: rgb(217.4910179641, 195.9580838323, 176.5089820359);
 }
-
-#form .form-bottle .form-content .all-form .left .inputs--filled label,
-#form-bottle .form-bottle .form-content .all-form .left .inputs--filled label {
+#form .form-bottle .form-content .all-form .left .inputs--filled label, #form-bottle .form-bottle .form-content .all-form .left .inputs--filled label {
   transform: translate(0, 0);
 }
-
 #form .form-bottle .form-content .all-form .left .inputs--invalid input,
 #form .form-bottle .form-content .all-form .left .inputs--invalid select,
-#form .form-bottle .form-content .all-form .left .inputs--invalid textarea,
-#form-bottle .form-bottle .form-content .all-form .left .inputs--invalid input,
+#form .form-bottle .form-content .all-form .left .inputs--invalid textarea, #form-bottle .form-bottle .form-content .all-form .left .inputs--invalid input,
 #form-bottle .form-bottle .form-content .all-form .left .inputs--invalid select,
 #form-bottle .form-bottle .form-content .all-form .left .inputs--invalid textarea {
   border-bottom: 4px solid #485884;
   color: #485884;
   animation: shake 0.3s both ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .left .inputs--invalid label,
-#form-bottle .form-bottle .form-content .all-form .left .inputs--invalid label {
+#form .form-bottle .form-content .all-form .left .inputs--invalid label, #form-bottle .form-bottle .form-content .all-form .left .inputs--invalid label {
   color: #485884;
 }
-
-#form .form-bottle .form-content .all-form .right,
-#form-bottle .form-bottle .form-content .all-form .right {
+#form .form-bottle .form-content .all-form .right, #form-bottle .form-bottle .form-content .all-form .right {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 48%;
   height: 100%;
 }
-
-#form .form-bottle .form-content .all-form .right span,
-#form-bottle .form-bottle .form-content .all-form .right span {
+#form .form-bottle .form-content .all-form .right span, #form-bottle .form-bottle .form-content .all-form .right span {
   display: block;
   margin-bottom: 1.15rem;
   position: relative;
 }
-
-#form .form-bottle .form-content .all-form .right span label,
-#form-bottle .form-bottle .form-content .all-form .right span label {
+#form .form-bottle .form-content .all-form .right span label, #form-bottle .form-bottle .form-content .all-form .right span label {
   color: #c9aa8e;
   font-family: "Baloo", sans-serif;
   font-size: 0.75rem;
@@ -590,29 +476,19 @@
   transform: translateY(1.25rem);
   transition: 0.15s ease;
 }
-
-#form .form-bottle .form-content .all-form .right span .input-reset-inline,
-#form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline {
+#form .form-bottle .form-content .all-form .right span .input-reset-inline, #form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
 #form .form-bottle .form-content .all-form .right span .input-reset-inline input,
 #form .form-bottle .form-content .all-form .right span .input-reset-inline select,
-#form .form-bottle .form-content .all-form .right span .input-reset-inline textarea,
-#form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline input,
+#form .form-bottle .form-content .all-form .right span .input-reset-inline textarea, #form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline input,
 #form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline select,
 #form-bottle .form-bottle .form-content .all-form .right span .input-reset-inline textarea {
   flex: 1 1 auto;
 }
-
-#form .form-bottle .form-content .all-form .right span input,
-#form .form-bottle .form-content .all-form .right span select,
-#form .form-bottle .form-content .all-form .right span textarea,
-#form-bottle .form-bottle .form-content .all-form .right span input,
-#form-bottle .form-bottle .form-content .all-form .right span select,
-#form-bottle .form-bottle .form-content .all-form .right span textarea {
+#form .form-bottle .form-content .all-form .right span input, #form .form-bottle .form-content .all-form .right span select, #form .form-bottle .form-content .all-form .right span textarea, #form-bottle .form-bottle .form-content .all-form .right span input, #form-bottle .form-bottle .form-content .all-form .right span select, #form-bottle .form-bottle .form-content .all-form .right span textarea {
   flex: 1;
   width: 100%;
   border: none;
@@ -624,21 +500,15 @@
   outline: none;
   resize: none;
 }
-
 #form .form-bottle .form-content .all-form .right span input:focus-visible,
 #form .form-bottle .form-content .all-form .right span select:focus-visible,
-#form .form-bottle .form-content .all-form .right span textarea:focus-visible,
-#form-bottle .form-bottle .form-content .all-form .right span input:focus-visible,
+#form .form-bottle .form-content .all-form .right span textarea:focus-visible, #form-bottle .form-bottle .form-content .all-form .right span input:focus-visible,
 #form-bottle .form-bottle .form-content .all-form .right span select:focus-visible,
 #form-bottle .form-bottle .form-content .all-form .right span textarea:focus-visible {
   outline: none;
   border-bottom-color: rgb(233.9820359281, 221.9161676647, 211.0179640719);
 }
-
-#form .form-bottle .form-content .all-form .right span #bottles_type_form_bio,
-#form .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite,
-#form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_bio,
-#form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite {
+#form .form-bottle .form-content .all-form .right span #bottles_type_form_bio, #form .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite, #form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_bio, #form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -651,23 +521,13 @@
   outline: none;
   resize: none;
 }
-
-#form .form-bottle .form-content .all-form .right span #bottles_type_form_bio input[type=radio],
-#form .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite input[type=radio],
-#form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_bio input[type=radio],
-#form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite input[type=radio] {
+#form .form-bottle .form-content .all-form .right span #bottles_type_form_bio input[type=radio], #form .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite input[type=radio], #form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_bio input[type=radio], #form-bottle .form-bottle .form-content .all-form .right span #bottles_type_form_sulfite input[type=radio] {
   accent-color: #9cbeaa;
 }
-
-#form .form-bottle .form-content .all-form .right .number label,
-#form .form-bottle .form-content .all-form .right #image label,
-#form-bottle .form-bottle .form-content .all-form .right .number label,
-#form-bottle .form-bottle .form-content .all-form .right #image label {
+#form .form-bottle .form-content .all-form .right .number label, #form .form-bottle .form-content .all-form .right #image label, #form-bottle .form-bottle .form-content .all-form .right .number label, #form-bottle .form-bottle .form-content .all-form .right #image label {
   transform: translate(0, 0);
 }
-
-#form .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button,
-#form-bottle .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button {
+#form .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button, #form-bottle .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button {
   background-color: transparent;
   color: #9cbeaa;
   border: none;
@@ -675,15 +535,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button:hover,
-#form-bottle .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button:hover {
+#form .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button:hover, #form-bottle .form-bottle .form-content .all-form .right input[type=file]::-webkit-file-upload-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form-bottle .form-content .all-form .right input[type=file]::file-selector-button,
-#form-bottle .form-bottle .form-content .all-form .right input[type=file]::file-selector-button {
+#form .form-bottle .form-content .all-form .right input[type=file]::file-selector-button, #form-bottle .form-bottle .form-content .all-form .right input[type=file]::file-selector-button {
   padding: 0.3rem 0.5rem;
   background-color: transparent;
   color: #9cbeaa;
@@ -692,15 +548,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .right input[type=file]::file-selector-button:hover,
-#form-bottle .form-bottle .form-content .all-form .right input[type=file]::file-selector-button:hover {
+#form .form-bottle .form-content .all-form .right input[type=file]::file-selector-button:hover, #form-bottle .form-bottle .form-content .all-form .right input[type=file]::file-selector-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form-bottle .form-content .all-form .right input[type=submit],
-#form-bottle .form-bottle .form-content .all-form .right input[type=submit] {
+#form .form-bottle .form-content .all-form .right input[type=submit], #form-bottle .form-bottle .form-content .all-form .right input[type=submit] {
   margin: 1em auto 0;
   background: #c9aa8e;
   color: #Fafdff;
@@ -710,43 +562,31 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-
 #form .form-bottle .form-content .all-form .right input[type=submit]:hover,
-#form .form-bottle .form-content .all-form .right input[type=submit]:focus,
-#form-bottle .form-bottle .form-content .all-form .right input[type=submit]:hover,
+#form .form-bottle .form-content .all-form .right input[type=submit]:focus, #form-bottle .form-bottle .form-content .all-form .right input[type=submit]:hover,
 #form-bottle .form-bottle .form-content .all-form .right input[type=submit]:focus {
   background: rgb(217.4910179641, 195.9580838323, 176.5089820359);
 }
-
-#form .form-bottle .form-content .all-form .right .inputs--filled label,
-#form-bottle .form-bottle .form-content .all-form .right .inputs--filled label {
+#form .form-bottle .form-content .all-form .right .inputs--filled label, #form-bottle .form-bottle .form-content .all-form .right .inputs--filled label {
   transform: translate(0, 0);
 }
-
 #form .form-bottle .form-content .all-form .right .inputs--invalid input,
 #form .form-bottle .form-content .all-form .right .inputs--invalid select,
-#form .form-bottle .form-content .all-form .right .inputs--invalid textarea,
-#form-bottle .form-bottle .form-content .all-form .right .inputs--invalid input,
+#form .form-bottle .form-content .all-form .right .inputs--invalid textarea, #form-bottle .form-bottle .form-content .all-form .right .inputs--invalid input,
 #form-bottle .form-bottle .form-content .all-form .right .inputs--invalid select,
 #form-bottle .form-bottle .form-content .all-form .right .inputs--invalid textarea {
   border-bottom: 4px solid #485884;
   color: #485884;
   animation: shake 0.3s both ease-in-out;
 }
-
-#form .form-bottle .form-content .all-form .right .inputs--invalid label,
-#form-bottle .form-bottle .form-content .all-form .right .inputs--invalid label {
+#form .form-bottle .form-content .all-form .right .inputs--invalid label, #form-bottle .form-bottle .form-content .all-form .right .inputs--invalid label {
   color: #485884;
 }
-
-#form .form-bottle .form-content .all-form .right textarea,
-#form-bottle .form-bottle .form-content .all-form .right textarea {
+#form .form-bottle .form-content .all-form .right textarea, #form-bottle .form-bottle .form-content .all-form .right textarea {
   height: 20rem;
   resize: vertical;
 }
-
-#form .form,
-#form-bottle .form {
+#form .form, #form-bottle .form {
   position: relative;
   width: 70%;
   max-width: 1200px;
@@ -759,65 +599,45 @@
   background: #Fafdff;
   box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
 }
-
-#form .form .warming,
-#form-bottle .form .warming {
+#form .form .warming, #form-bottle .form .warming {
   width: 100%;
 }
-
-#form .form .warming .alert,
-#form-bottle .form .warming .alert {
+#form .form .warming .alert, #form-bottle .form .warming .alert {
   background-color: #364263;
   padding: 1rem;
   border-radius: 6px 6px 0 0;
   border: solid 3px #c9aa8e;
   text-align: center;
 }
-
-#form .form .warming .mb-3,
-#form-bottle .form .warming .mb-3 {
+#form .form .warming .mb-3, #form-bottle .form .warming .mb-3 {
   font-size: 0.95rem;
   text-align: center;
 }
-
-#form .form .warming .mb-3 a,
-#form-bottle .form .warming .mb-3 a {
+#form .form .warming .mb-3 a, #form-bottle .form .warming .mb-3 a {
   color: #7b8bb7;
   text-decoration: underline;
 }
-
-#form .form .warming .mb-3:hover,
-#form-bottle .form .warming .mb-3:hover {
+#form .form .warming .mb-3:hover, #form-bottle .form .warming .mb-3:hover {
   color: #Fafdff;
 }
-
-#form .form .form-content,
-#form-bottle .form .form-content {
+#form .form .form-content, #form-bottle .form .form-content {
   position: relative;
   width: 100%;
   display: flex;
 }
-
-#form .form .form-content .mix,
-#form-bottle .form .form-content .mix {
+#form .form .form-content .mix, #form-bottle .form .form-content .mix {
   position: relative;
   width: 50%;
   overflow: hidden;
 }
-
-#form .form .form-content .mix figure,
-#form-bottle .form .form-content .mix figure {
+#form .form .form-content .mix figure, #form-bottle .form .form-content .mix figure {
   width: 100%;
 }
-
-#form .form .form-content .mix figure img,
-#form-bottle .form .form-content .mix figure img {
+#form .form .form-content .mix figure img, #form-bottle .form .form-content .mix figure img {
   min-height: 500px;
   max-height: 500px;
 }
-
-#form .form .form-content .mix .headline,
-#form-bottle .form .form-content .mix .headline {
+#form .form .form-content .mix .headline, #form-bottle .form .form-content .mix .headline {
   position: absolute;
   top: 8%;
   left: 50%;
@@ -837,41 +657,31 @@
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
 }
-
-#form .form .form-content .mix .headline .text-headline,
-#form-bottle .form .form-content .mix .headline .text-headline {
+#form .form .form-content .mix .headline .text-headline, #form-bottle .form .form-content .mix .headline .text-headline {
   color: #c9aa8e;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
 }
-
-#form .form .form-content .mix .headline .text-subheadline,
-#form-bottle .form .form-content .mix .headline .text-subheadline {
+#form .form .form-content .mix .headline .text-subheadline, #form-bottle .form .form-content .mix .headline .text-subheadline {
   color: #485884;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.14rem;
   text-shadow: 2px 2px 2px #9cbeaa;
 }
-
-#form .form .form-content .all-form,
-#form-bottle .form .form-content .all-form {
+#form .form .form-content .all-form, #form-bottle .form .form-content .all-form {
   overflow: hidden;
   padding: 10%;
   position: relative;
   width: 50%;
 }
-
-#form .form .form-content .all-form span,
-#form-bottle .form .form-content .all-form span {
+#form .form .form-content .all-form span, #form-bottle .form .form-content .all-form span {
   display: block;
   margin-bottom: 1.15rem;
   position: relative;
 }
-
-#form .form .form-content .all-form span label,
-#form-bottle .form .form-content .all-form span label {
+#form .form .form-content .all-form span label, #form-bottle .form .form-content .all-form span label {
   color: #c9aa8e;
   font-family: "Baloo", sans-serif;
   font-size: 0.75rem;
@@ -881,29 +691,19 @@
   transform: translateY(1.25rem);
   transition: 0.15s ease;
 }
-
-#form .form .form-content .all-form span .input-reset-inline,
-#form-bottle .form .form-content .all-form span .input-reset-inline {
+#form .form .form-content .all-form span .input-reset-inline, #form-bottle .form .form-content .all-form span .input-reset-inline {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
 #form .form .form-content .all-form span .input-reset-inline input,
 #form .form .form-content .all-form span .input-reset-inline select,
-#form .form .form-content .all-form span .input-reset-inline textarea,
-#form-bottle .form .form-content .all-form span .input-reset-inline input,
+#form .form .form-content .all-form span .input-reset-inline textarea, #form-bottle .form .form-content .all-form span .input-reset-inline input,
 #form-bottle .form .form-content .all-form span .input-reset-inline select,
 #form-bottle .form .form-content .all-form span .input-reset-inline textarea {
   flex: 1 1 auto;
 }
-
-#form .form .form-content .all-form span input,
-#form .form .form-content .all-form span select,
-#form .form .form-content .all-form span textarea,
-#form-bottle .form .form-content .all-form span input,
-#form-bottle .form .form-content .all-form span select,
-#form-bottle .form .form-content .all-form span textarea {
+#form .form .form-content .all-form span input, #form .form .form-content .all-form span select, #form .form .form-content .all-form span textarea, #form-bottle .form .form-content .all-form span input, #form-bottle .form .form-content .all-form span select, #form-bottle .form .form-content .all-form span textarea {
   flex: 1;
   width: 100%;
   border: none;
@@ -915,21 +715,15 @@
   outline: none;
   resize: none;
 }
-
 #form .form .form-content .all-form span input:focus-visible,
 #form .form .form-content .all-form span select:focus-visible,
-#form .form .form-content .all-form span textarea:focus-visible,
-#form-bottle .form .form-content .all-form span input:focus-visible,
+#form .form .form-content .all-form span textarea:focus-visible, #form-bottle .form .form-content .all-form span input:focus-visible,
 #form-bottle .form .form-content .all-form span select:focus-visible,
 #form-bottle .form .form-content .all-form span textarea:focus-visible {
   outline: none;
   border-bottom-color: rgb(233.9820359281, 221.9161676647, 211.0179640719);
 }
-
-#form .form .form-content .all-form span #bottles_type_form_bio,
-#form .form .form-content .all-form span #bottles_type_form_sulfite,
-#form-bottle .form .form-content .all-form span #bottles_type_form_bio,
-#form-bottle .form .form-content .all-form span #bottles_type_form_sulfite {
+#form .form .form-content .all-form span #bottles_type_form_bio, #form .form .form-content .all-form span #bottles_type_form_sulfite, #form-bottle .form .form-content .all-form span #bottles_type_form_bio, #form-bottle .form .form-content .all-form span #bottles_type_form_sulfite {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -942,23 +736,13 @@
   outline: none;
   resize: none;
 }
-
-#form .form .form-content .all-form span #bottles_type_form_bio input[type=radio],
-#form .form .form-content .all-form span #bottles_type_form_sulfite input[type=radio],
-#form-bottle .form .form-content .all-form span #bottles_type_form_bio input[type=radio],
-#form-bottle .form .form-content .all-form span #bottles_type_form_sulfite input[type=radio] {
+#form .form .form-content .all-form span #bottles_type_form_bio input[type=radio], #form .form .form-content .all-form span #bottles_type_form_sulfite input[type=radio], #form-bottle .form .form-content .all-form span #bottles_type_form_bio input[type=radio], #form-bottle .form .form-content .all-form span #bottles_type_form_sulfite input[type=radio] {
   accent-color: #9cbeaa;
 }
-
-#form .form .form-content .all-form .number label,
-#form .form .form-content .all-form #image label,
-#form-bottle .form .form-content .all-form .number label,
-#form-bottle .form .form-content .all-form #image label {
+#form .form .form-content .all-form .number label, #form .form .form-content .all-form #image label, #form-bottle .form .form-content .all-form .number label, #form-bottle .form .form-content .all-form #image label {
   transform: translate(0, 0);
 }
-
-#form .form .form-content .all-form input[type=file]::-webkit-file-upload-button,
-#form-bottle .form .form-content .all-form input[type=file]::-webkit-file-upload-button {
+#form .form .form-content .all-form input[type=file]::-webkit-file-upload-button, #form-bottle .form .form-content .all-form input[type=file]::-webkit-file-upload-button {
   background-color: transparent;
   color: #9cbeaa;
   border: none;
@@ -966,15 +750,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form .form-content .all-form input[type=file]::-webkit-file-upload-button:hover,
-#form-bottle .form .form-content .all-form input[type=file]::-webkit-file-upload-button:hover {
+#form .form .form-content .all-form input[type=file]::-webkit-file-upload-button:hover, #form-bottle .form .form-content .all-form input[type=file]::-webkit-file-upload-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form .form-content .all-form input[type=file]::file-selector-button,
-#form-bottle .form .form-content .all-form input[type=file]::file-selector-button {
+#form .form .form-content .all-form input[type=file]::file-selector-button, #form-bottle .form .form-content .all-form input[type=file]::file-selector-button {
   padding: 0.3rem 0.5rem;
   background-color: transparent;
   color: #9cbeaa;
@@ -983,15 +763,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-#form .form .form-content .all-form input[type=file]::file-selector-button:hover,
-#form-bottle .form .form-content .all-form input[type=file]::file-selector-button:hover {
+#form .form .form-content .all-form input[type=file]::file-selector-button:hover, #form-bottle .form .form-content .all-form input[type=file]::file-selector-button:hover {
   background-color: #9cbeaa;
   color: #Fafdff;
 }
-
-#form .form .form-content .all-form input[type=submit],
-#form-bottle .form .form-content .all-form input[type=submit] {
+#form .form .form-content .all-form input[type=submit], #form-bottle .form .form-content .all-form input[type=submit] {
   margin: 1em auto 0;
   background: #c9aa8e;
   color: #Fafdff;
@@ -1001,32 +777,24 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-
 #form .form .form-content .all-form input[type=submit]:hover,
-#form .form .form-content .all-form input[type=submit]:focus,
-#form-bottle .form .form-content .all-form input[type=submit]:hover,
+#form .form .form-content .all-form input[type=submit]:focus, #form-bottle .form .form-content .all-form input[type=submit]:hover,
 #form-bottle .form .form-content .all-form input[type=submit]:focus {
   background: rgb(217.4910179641, 195.9580838323, 176.5089820359);
 }
-
-#form .form .form-content .all-form .inputs--filled label,
-#form-bottle .form .form-content .all-form .inputs--filled label {
+#form .form .form-content .all-form .inputs--filled label, #form-bottle .form .form-content .all-form .inputs--filled label {
   transform: translate(0, 0);
 }
-
 #form .form .form-content .all-form .inputs--invalid input,
 #form .form .form-content .all-form .inputs--invalid select,
-#form .form .form-content .all-form .inputs--invalid textarea,
-#form-bottle .form .form-content .all-form .inputs--invalid input,
+#form .form .form-content .all-form .inputs--invalid textarea, #form-bottle .form .form-content .all-form .inputs--invalid input,
 #form-bottle .form .form-content .all-form .inputs--invalid select,
 #form-bottle .form .form-content .all-form .inputs--invalid textarea {
   border-bottom: 4px solid #485884;
   color: #485884;
   animation: shake 0.3s both ease-in-out;
 }
-
-#form .form .form-content .all-form .inputs--invalid label,
-#form-bottle .form .form-content .all-form .inputs--invalid label {
+#form .form .form-content .all-form .inputs--invalid label, #form-bottle .form .form-content .all-form .inputs--invalid label {
   color: #485884;
 }
 
@@ -1035,11 +803,8 @@
     width: 100%;
   }
 }
-
 @media screen and (max-width: 768px) {
-
-  #form .form-bottle,
-  #form-bottle .form-bottle {
+  #form .form-bottle, #form-bottle .form-bottle {
     margin-top: 5rem;
     position: relative;
     width: 100%;
@@ -1053,32 +818,22 @@
     background: #Fafdff;
     box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
   }
-
-  #form .form-bottle .form-content,
-  #form-bottle .form-bottle .form-content {
+  #form .form-bottle .form-content, #form-bottle .form-bottle .form-content {
     flex-direction: column;
   }
-
-  #form .form-bottle .form-content .mix,
-  #form-bottle .form-bottle .form-content .mix {
+  #form .form-bottle .form-content .mix, #form-bottle .form-bottle .form-content .mix {
     position: relative;
     width: 100%;
     overflow: hidden;
   }
-
-  #form .form-bottle .form-content .mix figure,
-  #form-bottle .form-bottle .form-content .mix figure {
+  #form .form-bottle .form-content .mix figure, #form-bottle .form-bottle .form-content .mix figure {
     width: 100%;
   }
-
-  #form .form-bottle .form-content .mix figure img,
-  #form-bottle .form-bottle .form-content .mix figure img {
+  #form .form-bottle .form-content .mix figure img, #form-bottle .form-bottle .form-content .mix figure img {
     min-height: 400px;
     max-height: 400px;
   }
-
-  #form .form-bottle .form-content .mix .headline,
-  #form-bottle .form-bottle .form-content .mix .headline {
+  #form .form-bottle .form-content .mix .headline, #form-bottle .form-bottle .form-content .mix .headline {
     position: absolute;
     top: 8%;
     left: 50%;
@@ -1098,110 +853,77 @@
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
   }
-
-  #form .form-bottle .form-content .mix .headline .text-headline,
-  #form-bottle .form-bottle .form-content .mix .headline .text-headline {
+  #form .form-bottle .form-content .mix .headline .text-headline, #form-bottle .form-bottle .form-content .mix .headline .text-headline {
     color: #c9aa8e;
     font-size: 1.6rem;
     text-transform: uppercase;
     letter-spacing: 0.4rem;
   }
-
-  #form .form-bottle .form-content .mix .headline .text-subheadline,
-  #form-bottle .form-bottle .form-content .mix .headline .text-subheadline {
+  #form .form-bottle .form-content .mix .headline .text-subheadline, #form-bottle .form-bottle .form-content .mix .headline .text-subheadline {
     color: #485884;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.14rem;
     text-shadow: 2px 2px 2px #9cbeaa;
   }
-
-  #form .form-bottle .form-content .all-form,
-  #form-bottle .form-bottle .form-content .all-form {
+  #form .form-bottle .form-content .all-form, #form-bottle .form-bottle .form-content .all-form {
     padding: 5%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
-  #form .form-bottle .form-content .all-form .left,
-  #form-bottle .form-bottle .form-content .all-form .left {
+  #form .form-bottle .form-content .all-form .left, #form-bottle .form-bottle .form-content .all-form .left {
     width: 100%;
   }
-
-  #form .form-bottle .form-content .all-form .left span,
-  #form-bottle .form-bottle .form-content .all-form .left span {
+  #form .form-bottle .form-content .all-form .left span, #form-bottle .form-bottle .form-content .all-form .left span {
     text-align: center;
   }
-
-  #form .form-bottle .form-content .all-form .left span input,
-  #form-bottle .form-bottle .form-content .all-form .left span input {
+  #form .form-bottle .form-content .all-form .left span input, #form-bottle .form-bottle .form-content .all-form .left span input {
     text-align: center;
   }
-
-  #form .form-bottle .form-content .all-form .right,
-  #form-bottle .form-bottle .form-content .all-form .right {
+  #form .form-bottle .form-content .all-form .right, #form-bottle .form-bottle .form-content .all-form .right {
     width: 100%;
   }
-
-  #form .form-bottle .form-content .all-form .right textarea,
-  #form-bottle .form-bottle .form-content .all-form .right textarea {
+  #form .form-bottle .form-content .all-form .right textarea, #form-bottle .form-bottle .form-content .all-form .right textarea {
     height: 8rem;
     resize: vertical;
   }
-
-  #form .form-bottle .form-content .all-form .right span,
-  #form-bottle .form-bottle .form-content .all-form .right span {
+  #form .form-bottle .form-content .all-form .right span, #form-bottle .form-bottle .form-content .all-form .right span {
     text-align: center;
   }
-
-  #form .form-bottle .form-content .all-form .right span input,
-  #form-bottle .form-bottle .form-content .all-form .right span input {
+  #form .form-bottle .form-content .all-form .right span input, #form-bottle .form-bottle .form-content .all-form .right span input {
     text-align: center;
   }
-
-  #form .form,
-  #form-bottle .form {
+  #form .form, #form-bottle .form {
     flex-direction: column;
     max-height: 750px;
   }
-
-  #form .form .form-content .mix,
-  #form-bottle .form .form-content .mix {
+  #form .form .form-content .mix, #form-bottle .form .form-content .mix {
     width: 100%;
   }
-
-  #form .form .form-content .all-form,
-  #form-bottle .form .form-content .all-form {
+  #form .form .form-content .all-form, #form-bottle .form .form-content .all-form {
     padding: 5%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
-  #form .form .form-content .all-form span,
-  #form-bottle .form .form-content .all-form span {
+  #form .form .form-content .all-form span, #form-bottle .form .form-content .all-form span {
     text-align: center;
   }
-
-  #form .form .form-content .all-form span input,
-  #form-bottle .form .form-content .all-form span input {
+  #form .form .form-content .all-form span input, #form-bottle .form .form-content .all-form span input {
     text-align: center;
   }
 }
-
 @media screen and (max-width: 360px) {
   #form {
     padding: 0;
   }
-
   #form .form {
     width: 100%;
   }
 }
-
 * {
   box-sizing: border-box;
 }
