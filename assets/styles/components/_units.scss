@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as v;
+
+$target = '../../../public/assets/images/game/Factions/Units/';
+
+@keyframes play {
+    to { background-position: calc(var(--w) * var(--frames) * -1) 0; }
+}
+
+.sprite {
+    width: var(64px);
+    height: var(64px);
+    background-repeat: no-repeat;
+    animation: play var(100ms) steps(var(--frames)) infinite;
+}
+
+.sprite.archer {
+    --frames: 6;
+
+    &.blue {
+        &.idle   { background-image: url($target + 'Blue Units/Archer_Idle.png'); }
+        &.walk   { background-image: url($target + 'Blue Units/Archer_Run.png'); }
+        &.attack { background-image: url($target + 'Blue Units/Archer_Shoot.png'); }
+        &.arrow  { background-image: url($target + 'Blue Units/Arrow.png'); }
+    }
+    &.red {
+        &.idle   { background-image: url($target + 'Red Units/Archer_Idle.png'); }
+        &.walk   { background-image: url($target + 'Red Units/Archer_Run.png'); }
+        &.attack { background-image: url($target + 'Red Units/Archer_Shoot.png'); }
+        &.arrow  { background-image: url($target + 'Red Units/Arrow.png'); }
+    }
+    &.black {
+        &.idle   { background-image: url($target + 'Black Units/Archer_Idle.png'); }
+        &.walk   { background-image: url($target + 'Black Units/Archer_Run.png'); }
+        &.attack { background-image: url($target + 'Black Units/Archer_Shoot.png'); }
+        &.arrow  { background-image: url($target + 'Black Units/Arrow.png'); }
+    }
+    &.yellow {
+        &.idle   { background-image: url($target + 'Yellow Units/Archer_Idle.png'); }
+        &.walk   { background-image: url($target + 'Yellow Units/Archer_Run.png'); }
+        &.attack { background-image: url($target + 'Yellow Units/Archer_Shoot.png'); }
+        &.arrow  { background-image: url($target + 'Yellow Units/Arrow.png'); }
+    }
+}
+$archer-states: (
+        'idle':  (frames: 6),
+        'run':   (frames: 4),
+        'shoot': (frames: 8)
+);

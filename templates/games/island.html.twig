@@ -26,95 +26,103 @@
                         <h2>Équipe de {{ user.pseudo }}</h2>
                     {% endif %}
                 </div>
-                <div class="team-card">
-                    <form method="post">
-
-                        {# --- Unité 1 --- #}
-                        <div>
-                            <label for="unitOneType">Unité 1 - Type</label>
-                            <select id="unitOneType" name="unitOneType"
-                                    hx-post="{{ path('units_colors_by_type') }}"
-                                    hx-trigger="change"
-                                    hx-target="#unitOneColor"
-                                    hx-swap="innerHTML"
-                                    hx-include="[name='unitOneType']">
-                                <option value="" disabled {{ (unitOneType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
-                                {% for row in types %}
-                                    <option value="{{ row.type }}" {{ row.type == (unitOneType|default(null)) ? 'selected' : '' }}>
-                                        {{ row.type }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-
-                            <label for="unitOneColor">Couleur</label>
-                            <select id="unitOneColor" name="unitOneColor"
-                                    hx-get="{{ path('units_colors_by_type', { type: (unitOneType|default(null)) ?? types|first.type }) }}"
-                                    hx-trigger="load"
-                                    hx-swap="innerHTML">
-                                {% if (unitOneColor|default(null)) is null %}
-                                    <option value="" disabled selected>— choisir une couleur —</option>
-                                {% endif %}
-                            </select>
-                        </div>
-
-                        {# --- Unité 2 --- #}
-                        <div>
-                            <label for="unitTwoType">Unité 2 - Type</label>
-                            <select id="unitTwoType" name="unitTwoType"
-                                    hx-post="{{ path('units_colors_by_type') }}"
-                                    hx-trigger="change"
-                                    hx-target="#unitTwoColor"
-                                    hx-swap="innerHTML"
-                                    hx-include="[name='unitTwoType']">
-                                <option value="" disabled {{ (unitTwoType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
-                                {% for row in types %}
-                                    <option value="{{ row.type }}" {{ row.type == (unitTwoType|default(null)) ? 'selected' : '' }}>
-                                        {{ row.type }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-
-                            <label for="unitTwoColor">Couleur</label>
-                            <select id="unitTwoColor" name="unitTwoColor"
-                                    hx-get="{{ path('units_colors_by_type', { type: (unitTwoType|default(null)) ?? types|first.type }) }}"
-                                    hx-trigger="load"
-                                    hx-swap="innerHTML">
-                                {% if (unitTwoColor|default(null)) is null %}
-                                    <option value="" disabled selected>— choisir une couleur —</option>
-                                {% endif %}
-                            </select>
-                        </div>
-
-                        {# --- Unité 3 --- #}
-                        <div>
-                            <label for="unitThreeType">Unité 3 - Type</label>
-                            <select id="unitThreeType" name="unitThreeType"
-                                    hx-post="{{ path('units_colors_by_type') }}"
-                                    hx-trigger="change"
-                                    hx-target="#unitThreeColor"
-                                    hx-swap="innerHTML"
-                                    hx-include="[name='unitThreeType']">
-                                <option value="" disabled {{ (unitThreeType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
-                                {% for row in types %}
-                                    <option value="{{ row.type }}" {{ row.type == (unitThreeType|default(null)) ? 'selected' : '' }}>
-                                        {{ row.type }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-
-                            <label for="unitThreeColor">Couleur</label>
-                            <select id="unitThreeColor" name="unitThreeColor"
-                                    hx-get="{{ path('units_colors_by_type', { type: (unitThreeType|default(null)) ?? types|first.type }) }}"
-                                    hx-trigger="load"
-                                    hx-swap="innerHTML">
-                                {% if (unitThreeColor|default(null)) is null %}
-                                    <option value="" disabled selected>— choisir une couleur —</option>
-                                {% endif %}
-                            </select>
-                        </div>
-
-                        <button type="submit">Sauvegarder</button>
+                <div class="team-card-form">
+                    {% set fallbackType = types|first %}
+                    <form id="unitOneForm"
+                          hx-post="{{ path('team_save_unit') }}"
+                          hx-trigger="change from:#unitOneType, change from:#unitOneColor"
+                          hx-swap="none">
+                        <input type="hidden" name="slot" value="one"/>
+                        <label for="unitOneType">Unité 1 - Type</label>
+                        <select id="unitOneType" name="type"
+                                hx-get="{{ path('units_colors_by_type') }}"
+                                hx-trigger="change"
+                                hx-target="#unitOneColor"
+                                hx-swap="innerHTML">
+                            <option value="" disabled {{ (unitOneType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
+                            {% for row in types %}
+                                <option value="{{ row }}" {{ row == (unitOneType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="unitOneColor">Couleur</label>
+                        <select id="unitOneColor" name="color"
+                                hx-get="{{ path('units_colors_by_type', { type: unitOneType|default(fallbackType) }) }}"
+                                hx-trigger="load"
+                                hx-swap="innerHTML">
+                            {% if (unitOneColor|default(null)) is null %}
+                                <option value="" disabled selected>— choisir une couleur —</option>
+                            {% endif %}
+                        </select>
                     </form>
+                    <form id="unitTwoForm"
+                          hx-post="{{ path('team_save_unit') }}"
+                          hx-trigger="change from:#unitTwoType, change from:#unitTwoColor"
+                          hx-swap="none">
+                        <input type="hidden" name="slot" value="two"/>
+                        <label for="unitTwoType">Unité 2 - Type</label>
+                        <select id="unitTwoType" name="type"
+                                hx-get="{{ path('units_colors_by_type') }}"
+                                hx-trigger="change"
+                                hx-target="#unitTwoColor"
+                                hx-swap="innerHTML">
+                            <option value="" disabled {{ (unitTwoType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
+                            {% for row in types %}
+                                <option value="{{ row }}" {{ row == (unitTwoType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="unitTwoColor">Couleur</label>
+                        <select id="unitTwoColor" name="color"
+                                hx-get="{{ path('units_colors_by_type', { type: unitTwoType|default(fallbackType) }) }}"
+                                hx-trigger="load"
+                                hx-swap="innerHTML">
+                            {% if (unitTwoColor|default(null)) is null %}
+                                <option value="" disabled selected>— choisir une couleur —</option>
+                            {% endif %}
+                        </select>
+                    </form>
+                    <form id="unitThreeForm"
+                          hx-post="{{ path('team_save_unit') }}"
+                          hx-trigger="change from:#unitThreeType, change from:#unitThreeColor"
+                          hx-swap="none">
+                        <input type="hidden" name="slot" value="three"/>
+                        <label for="unitThreeType">Unité 3 - Type</label>
+                        <select id="unitThreeType" name="type"
+                                hx-get="{{ path('units_colors_by_type') }}"
+                                hx-trigger="change"
+                                hx-target="#unitThreeColor"
+                                hx-swap="innerHTML">
+                            <option value="" disabled {{ (unitThreeType|default(null)) is null ? 'selected' : '' }}>— choisir un type —</option>
+                            {% for row in types %}
+                                <option value="{{ row }}" {{ row == (unitThreeType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="unitThreeColor">Couleur</label>
+                        <select id="unitThreeColor" name="color"
+                                hx-get="{{ path('units_colors_by_type', { type: unitThreeType|default(fallbackType) }) }}"
+                                hx-trigger="load"
+                                hx-swap="innerHTML">
+                            {% if (unitThreeColor|default(null)) is null %}
+                                <option value="" disabled selected>— choisir une couleur —</option>
+                            {% endif %}
+                        </select>
+                    </form>
+                </div>
+                <div class="previews">
+                    <div id="unitOnePreview">
+                        {% if team and team.unitOne %}
+                            {% include 'games/units/_unit_card.html.twig' with { unit: team.unitOne } %}
+                        {% endif %}
+                    </div>
+                    <div id="unitTwoPreview">
+                        {% if team and team.unitTwo %}
+                            {% include 'games/units/_unit_card.html.twig' with { unit: team.unitTwo } %}
+                        {% endif %}
+                    </div>
+                    <div id="unitThreePreview">
+                        {% if team and team.unitThree %}
+                            {% include 'games/units/_unit_card.html.twig' with { unit: team.unitThree } %}
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

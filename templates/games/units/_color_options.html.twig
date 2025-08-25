@@ -1,10 +1,10 @@
 {% for unit in colors %}
     {% set selected = '' %}
-    {% if unit.type == unitOneType and unit.color == unitOneColor %}
+    {% if unit.type == (unitOneType|default(null)) and unit.color == (unitOneColor|default(null)) %}
         {% set selected = 'selected' %}
-    {% elseif unit.type == unitTwoType and unit.color == unitTwoColor %}
+    {% elseif unit.type == (unitTwoType|default(null)) and unit.color == (unitTwoColor|default(null)) %}
         {% set selected = 'selected' %}
-    {% elseif unit.type == unitThreeType and unit.color == unitThreeColor %}
+    {% elseif unit.type == (unitThreeType|default(null)) and unit.color == (unitThreeColor|default(null)) %}
         {% set selected = 'selected' %}
     {% endif %}
 
