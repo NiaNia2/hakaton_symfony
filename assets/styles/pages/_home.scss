@@ -42,5 +42,15 @@
             }
         }
 
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                padding: 0.5rem;
+            }
+        }
+
     }
 }
