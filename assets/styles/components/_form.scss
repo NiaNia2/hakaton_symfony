@@ -8,23 +8,30 @@
     100% { transform: translateX(0);}
 }
 
-@mixin form-basique($width: 70%, $height: 500px) {
+@mixin form-basique($width: 70%, $height: 650px) {
     position: relative;
     width: $width;
     max-width: 1200px;
     max-height: $height;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     color: v.$color-black;
-    border-radius: 0.5rem;
-    background: v.$color-white;
-    box-shadow: 0 6px 22px rgba(255, 255, 255, 0.3);
+    background-image: url("../../../public/assets/images/game/Terrain/tilemap.png");
+    background-size: 453px 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
 }
 
 @mixin warming() {
     .warming {
+        margin-bottom: 5rem;
+        min-width: 360px;
         width: 100%;
+        max-width: 675px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .alert {
             background-color: color.adjust(v.$color-secondary, $lightness: -10%);
             padding: 1rem;
@@ -34,29 +41,49 @@
         }
 
         .mb-3 {
+            width: 100%;
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            height: 64px;
+            background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
+            font-family: v.$font-titre;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
             font-size: 0.95rem;
             text-align: center;
-            a {
-                color: color.adjust(v.$color-secondary, $lightness: +20%);
-                text-decoration: underline;
+            color: v.$color-primary;
+            span {
+                width: 60%;
             }
-        }
-        .mb-3:hover {
-            color: v.$color-white;
+            a {
+                color: v.$color-white;
+            }
         }
     }
 }
 
-@mixin mix($width: 50%, $height: 500px) {
+@mixin mix($width: 50%, $height: 650px) {
     .mix {
         position: relative;
         width: $width;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: start;
 
         figure {
-            width: 100%;
+            width: 212px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            margin: 0;
             img {
-                min-height: $height;
+                min-height: 450px;
                 max-height: $height;
             }
         }
@@ -69,12 +96,11 @@
             text-align: center;
 
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem;
             border-radius: 1rem;
-            color: white;
             width: 70%;
 
             mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
@@ -85,36 +111,53 @@
 
             .text-headline {
                 color: v.$color-primary;
+                text-shadow: 2px 2px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 letter-spacing: 0.4rem;
             }
             .text-subheadline {
-                color: v.$color-secondary;
+                color: v.$color-error;
                 font-size: 0.8rem;
                 text-transform: uppercase;
                 letter-spacing: 0.14rem;
-                text-shadow: 2px 2px 2px v.$color-accent;
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
             }
         }
     }
 }
 
 @mixin input-label-effect() {
+    span:first-child {
+        padding-top: 5%;
+    }
     span {
+        width: 100%;
         display: block;
         margin-bottom: 1.15rem;
         position: relative;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
 
         label {
+            width: 100%;
+            height: 64px;
+            padding-top: 12px;
             color: v.$color-primary;
             font-family: v.$font-titre;
             font-size: 0.75rem;
             letter-spacing: .08rem;
             text-transform: uppercase;
             display: inline-block;
-            transform: translateY(1.25rem);
+            transform: translateY(1.1rem);
+            background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Blue_3Slides.png");
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
+            text-align: center;
             transition: 0.15s ease;
+            span:last-child {
+                margin: -5px 0 0;
+                padding: 0 4rem 0;
+            }
         }
 
         .input-reset-inline {
@@ -122,54 +165,31 @@
             align-items: center;
             gap: 0.5rem;
 
-            input,
-            select,
-            textarea {
+            input {
                 flex: 1 1 auto;
             }
         }
 
-        input, select, textarea {
+        input {
             flex: 1;
             width: 100%;
+            text-align: center;
+            padding-top: 3px;
             border: none;
             border-bottom: 2px solid v.$color-accent;
             font-family: v.$font-titre;
-            color: v.$color-primary;
-            background: none;
-            padding: 0.3rem 0;
+            color: v.$color-accent;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+            background-color: transparent;
+            background-image: url("../../../public/assets/images/game/UI/Banners/Carved_3Slides.png");
+            background-size: contain;
+            background-repeat: round;
             outline: none;
             resize: none;
         }
-        input:focus-visible,
-        select:focus-visible,
-        textarea:focus-visible {
+        input:focus-visible {
             outline: none;
             border-bottom-color: color.adjust(v.$color-primary, $lightness: 20%);
-        }
-
-        #bottles_type_form_bio, #bottles_type_form_sulfite {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: none;
-            border-bottom: 2px solid v.$color-accent;
-            font-family: v.$font-titre;
-            color: v.$color-primary;
-            background: none;
-            padding: 0.3rem 0;
-            outline: none;
-            resize: none;
-
-            input[type=radio] {
-                accent-color: v.$color-accent;
-            }
-        }
-    }
-
-    .number, #image {
-        label {
-            transform: translate(0, 0);
         }
     }
 
@@ -188,7 +208,7 @@
             color: v.$color-white;
         }
 
-        &::file-selector-button { // pour Firefox
+        &::file-selector-button {
             padding: 0.3rem 0.5rem;
             background-color: transparent;
             color: v.$color-accent;
@@ -205,18 +225,15 @@
     }
 
     input[type=submit] {
-        margin: 1em auto 0;
-        background: v.$color-primary;
+        margin: 0 auto 25px;
+        background-color: transparent;
         color: v.$color-white;
         border: none;
-        padding: 0.8rem 2rem;
+        padding: 10px 2rem 14px;
         font-family: v.$font-titre;
         cursor: pointer;
         transition: background 0.3s;
-    }
-    input[type=submit]:hover,
-    input[type=submit]:focus {
-        background: color.adjust(v.$color-primary, $lightness: 10%);
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
     }
 
     .inputs--filled label {
@@ -226,94 +243,72 @@
     .inputs--invalid input,
     .inputs--invalid select,
     .inputs--invalid textarea {
-        border-bottom: 4px solid v.$color-secondary;
-        color: v.$color-secondary;
+        border-bottom: 4px solid v.$color-error;
+        color: v.$color-error;
         animation: shake 0.3s both ease-in-out;
     }
 
     .inputs--invalid label {
-        color: v.$color-secondary;
+        background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
     }
 }
 
-#form, #form-bottle {
+#form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: v.$color-primary;
     padding: 1rem;
-
-    .form-bottle {
-        @include form-basique(100%, 690px);
-
-        @include warming();
-
-        .form-content {
-            position: relative;
-            width: 100%;
-            display: flex;
-
-            @include mix(40%, 690px);
-
-            .all-form {
-                overflow: hidden;
-                padding: 1rem;
-                position: relative;
-                width: 60%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 1rem;
-
-                .left {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    width: 48%;
-                    height: 100%;
-
-                    @include input-label-effect();
-                }
-                .right {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    width: 48%;
-                    height: 100%;
-
-                    @include input-label-effect();
-
-                    textarea {
-                        height: 20rem;
-                        resize: vertical;
-                    }
-                }
-            }
-        }
-    }
-
+    @include warming();
     .form {
         @include form-basique();
 
-        @include warming();
-
         .form-content {
             position: relative;
             width: 100%;
             display: flex;
+            padding-bottom: 10rem;
 
             @include mix();
 
             .all-form {
                 overflow: hidden;
-                padding: 10%;
+                padding: 5%;
                 position: relative;
                 width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable_9Slides.png");
+                background-size: calc(100% + 10px) 100%;
+                background-repeat: no-repeat;
+                background-position: -5px;
 
                 @include input-label-effect();
+
+                .form-group {
+                    .form-error {
+                        text-align: center;
+                        color: v.$color-error;
+                        font-family: v.$font-titre;
+
+                        ul {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
+        }
+    }
+}
+
+@media screen and (min-width:1991px) {
+    #form {
+        .form {
+            width: 35%;
         }
     }
 }
@@ -321,6 +316,7 @@
 @media screen and (max-width:1000px) {
     #form {
         .form {
+            width: 95%;
             .mix {
                 .headline {
                     width: 100%;
@@ -331,61 +327,23 @@
 }
 
 @media screen and (max-width:768px) {
-    #form, #form-bottle {
-        .form-bottle {
-            margin-top: 5rem;
-            @include form-basique(100%, none);
+    #form {
+        padding: 0;
+        .form {
+            width: 75%;
+            flex-direction: column;
+            background-size: 100% 80%;
+            max-height: 750px;
+
 
             .form-content {
                 flex-direction: column;
-
-                @include mix(100%, 400px);
-
-                .all-form {
-                    padding: 5%;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    .left {
-                        width: 100%;
-                        span {
-                            text-align: center;
-
-                            input {
-                                text-align: center;
-                            }
-                        }
-                    }
-                    .right {
-                        width: 100%;
-                        textarea {
-                            height: 8rem;
-                            resize: vertical;
-                        }
-                        span {
-                            text-align: center;
-
-                            input {
-                                text-align: center;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .form {
-            flex-direction: column;
-            max-height: 750px;
-
-            .form-content {
                 .mix {
                     width: 100%;
                 }
 
                 .all-form {
-                    padding: 5%;
+                    padding: 10%;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -404,11 +362,45 @@
     }
 }
 
-@media screen and (max-width:360px) {
+@media screen and (max-width:600px) {
     #form {
-        padding: 0;
         .form {
             width: 100%;
+            .form-content {
+                .all-form {
+                    .form-group {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .form-error {
+                            width: 95%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px) {
+    #form {
+        .form {
+            .form-content {
+                .all-form {
+                    padding: 0;
+
+                    span:first-child {
+                        padding-top: 14%;
+                    }
+                    span {
+                        padding: 0 10%;
+                    }
+                    input[type=submit] {
+                        margin-bottom: 80px;
+                    }
+                }
+            }
         }
     }
 }

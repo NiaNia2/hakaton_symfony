@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as v;
+
+@mixin ribbon($bg-image: "../../../public/assets/images/game/UI/Ribbons/Ribbon_Yellow_3Slides.png") {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    h2 {
+        width: auto;
+        height: 100%;
+        color: v.$color-primary;
+        margin: 0;
+        padding: 12px 20% 35px;
+        text-align: center;
+        text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px  2px 0 black;
+        background-image: url($bg-image);
+        background-repeat: no-repeat;
+        background-size: calc(100% + 10px) 100%;
+        background-position: -5px;
+    }
+}
+
+#island {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    .island {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        .island-title {
+            @include ribbon();
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        .team-container {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .team-owner {
+                @include ribbon("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+            }
+            .team-card {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-image: url("../../../public/assets/images/game/Terrain/Tilemap_Flat.png");
+                .unit-card {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1991px) {
+    #island {
+        .island {
+            .island-title {
+                width: 50%;
+            }
+            .team-container {
+                .team-owner {
+                   width: 50%;
+                }
+            }
+        }
+    }
+}

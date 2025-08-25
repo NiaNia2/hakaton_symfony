@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if app.user.id == team.user.id%}
+        Mon hub
+    {% else %}
+        Hub de {{ user.pseudo }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <p>{{ team.unitOne }}</p>
+    <p>{{ user.id }}</p>
+{% endblock %}
