@@ -28,16 +28,62 @@
                 </div>
                 <div class="team-card">
                     <div class="unit-card">
-                        <h3>{{ team.unitOne.type }}</h3>
-                        <p>{{ team.unitOne.description}}</p>
+                        {% if team.unitOne %}
+                            <p>{{ team.unitOne.type }}</p>
+                        {% else %}
+                            <form>
+                                <div>
+                                    <label >type</label>
+                                    <select name="type" hx-get="{{ path('units_colors_by_type') }}" hx-trigger="change" hx-target="#color1" hx-swap="innerHTML">
+                                        {% for row in types %}
+                                            <option value={{ row.type }}>{{ row.type }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                </div>
+                                <div>
+                                    <label>color</label>
+                                    <select id="color1" name="color" hx-get="{{ path('units_colors_by_type', {type: types|first.type}) }}" hx-trigger="load" hx-swap="innerHTML">
+                                    </select>
+                                </div>
+                            </form>
+                        {% endif %}
                     </div>
                     <div class="unit-card">
-                        <h3>{{ team.unitTwo.type }}</h3>
-                        <p>{{ team.unitTwo.description}}</p>
+                        <form>
+                            <div>
+                                <label >type</label>
+                                <select name="type" hx-get="{{ path('units_colors_by_type') }}" hx-trigger="change" hx-target="#color2" hx-swap="innerHTML">
+                                    {% for row in types %}
+                                        <option value={{ row.type }}>{{ row.type }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </div>
+                            <div>
+                                <label>color</label>
+                                <select id="color2" name="color" hx-get="{{ path('units_colors_by_type', {type: types|first.type}) }}" hx-trigger="load" hx-swap="innerHTML">
+                                </select>
+                            </div>
+                        </form>
                     </div>
                     <div class="unit-card">
-                        <h3>{{ team.unitThree.type }}</h3>
-                        <p>{{ team.unitThree.description}}</p>
+                        <form>
+                            <div>
+                                <label >type</label>
+                                <select name="type" hx-get="{{ path('units_colors_by_type') }}" hx-trigger="change" hx-target="#color3" hx-swap="innerHTML">
+                                    {% for row in types %}
+                                        <option value={{ row.type }}>{{ row.type }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </div>
+                            <div>
+                                <label>color</label>
+                                <select id="color3" name="color" hx-get="{{ path('units_colors_by_type', {type: types|first.type}) }}" hx-trigger="load" hx-swap="innerHTML">
+                                </select>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
