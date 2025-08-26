@@ -13,6 +13,7 @@
     background-color: v.$color-secondary;
 }
 
+
 .btn {
     background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable_3Slides.png");
     background-size: contain;
@@ -47,13 +48,23 @@
     border: none;
     color: v.$color-white;
 
+
     .redo-icon {
         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
     }
+
 
     transition: all 0.2s ease-in-out;
 }
 
 .reset-btn:hover {
     background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Hover.png");
+}
+
+.btn-nav {
+    padding: 1rem 2rem;
+    background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Disable.png");
+    background-size: cover;
+    background-repeat: round;
 }
