@@ -3,8 +3,10 @@
 .home-container {
     width: 100%;
 
+
     .home-content {
         width: 100%;
+
 
         .titre {
             text-align: center;
@@ -19,6 +21,8 @@
 
             .banner {
                 width: 50%;
+                padding-bottom: 10px;
+                // padding-top: 10px;
                 background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Blue_3Slides.png");
                 background-size: calc(100% + 10px) 100%;
                 background-position: -5px;
@@ -47,8 +51,10 @@
             justify-content: center;
             align-items: center;
 
-            .btn {
-                padding: 0.5rem;
+            .btn-home {
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 1rem;
             }
         }
 

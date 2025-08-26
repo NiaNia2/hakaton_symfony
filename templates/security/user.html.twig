@@ -2,9 +2,14 @@
 
 {% block title %}{% endblock %}
 {% block body %}
-	<section>
-		<div>
-			{{ app.user.userIdentifier }}
+	<section class="user-contenair">
+		<div class="user-content">
+			<div class="titre-content">
+				<div class="titre">
+					<h1>{{ app.user.pseudo }}</h1>
+				</div>
+
+			</div>
 		</div>
 	</section>
 

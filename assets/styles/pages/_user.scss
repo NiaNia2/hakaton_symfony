@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as v;
+
+.user-contenair {
+    width: 100%;
+
+    .user-content {
+        width: 100%;
+
+        .titre-content {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            .titre {
+                width: 20%;
+                padding-top: 10px;
+                padding-bottom: 12px;
+                background-image: url(../../../public/assets/images/game/UI/Banners/Banner_Horizontal.png);
+                background-size: calc(100% + 10px) 100%;
+                background-position: -5px;
+
+            }
+
+        }
+    }
+}
