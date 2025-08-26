@@ -20,11 +20,17 @@
     background-repeat: round;
 }
 
-.btn-nav:hover,
-.btn-nav:focus,
+.btn-home:hover,
 .btn:hover,
 .btn:focus {
     background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Hover_3Slides.png");
+}
+
+.btn-home {
+    background-image: url("../../../public/assets/images/game/UI/Buttons/Button_Blue_3Slides.png");
+    background-size: contain;
+    background-repeat: round;
+    padding: 0.5rem;
 }
 
 .btn-warming {
@@ -42,9 +48,12 @@
     border: none;
     color: v.$color-white;
 
+
     .redo-icon {
         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
     }
+
 
     transition: all 0.2s ease-in-out;
 }
