@@ -1,11 +1,16 @@
 {% if unit is defined and unit %}
     <div class="unit-card">
-        <ul class="unit-stats">
-            <li>Vitalité : {{ unit.vita }}</li>
-            <li>Initiative : {{ unit.initiative }}</li>
-            <li>Attaque : {{ unit.att }}</li>
-            <li>Mana : {{ unit.mana }}</li>
-        </ul>
-        <p class="unit-desc">{{ unit.description }}</p>
+        <div class="preview-box">
+            <div class="sprite {{ unit.type }} {{ unit.color }} idle"></div>
+        </div>
+        <div class="unit-content">
+            <ul class="unit-stats">
+                <li>Vitalité : {{ unit.vita }}</li>
+                <li>Initiative : {{ unit.initiative }}</li>
+                <li>Attaque : {{ unit.att }}</li>
+                <li>Mana : {{ unit.mana }}</li>
+            </ul>
+            <p class="unit-desc">{{ unit.description }}</p>
+        </div>
     </div>
 {% endif %}
