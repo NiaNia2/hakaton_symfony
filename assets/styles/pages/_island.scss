@@ -1,6 +1,8 @@
 @use "../abstracts/variables" as v;
 
-@mixin ribbon($bg-image: "../../../public/assets/images/game/UI/Ribbons/Ribbon_Yellow_3Slides.png") {
+$target: '../../../public/assets/images/game/';
+
+@mixin ribbon($bg-image: "#{$target}UI/Ribbons/Ribbon_Yellow_3Slides.png") {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -31,32 +33,53 @@
         justify-content: center;
         align-items: center;
         gap: 5rem;
-        .island-title {
-            @include ribbon();
-            h2 {
-                font-size: 2rem;
-            }
-        }
         .team-container {
             width: 90%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 2rem;
             .team-owner {
-                @include ribbon("../../../public/assets/images/game/UI/Ribbons/Ribbon_Red_3Slides.png");
+                @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
             }
             .team-card {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background-image: url("../../../public/assets/images/game/Terrain/tilemap.png");
-                background-size: 360px 100%;
-                background-position: left top;
-                background-repeat: repeat;
-                .unit-card {
-                    width: 30%;
+
+                #unitOne, #unitTwo, #unitThree {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    #unitOneForm, #unitTwoForm, #unitThreeForm {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 2rem;
+                      background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
+                      background-size: 100% 100%;
+                      background-position: left top;
+                      background-repeat: repeat;
+
+                      #unitOneType, #unitTwoType, #unitThreeType {
+                        margin-bottom: 1rem;
+                      }
+                    }
+
+                    #unitOnePreview, #unitTwoPreview, #unitThreePreview {
+                        .unit-card {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
                 }
             }
         }

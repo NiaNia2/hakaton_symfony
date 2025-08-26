@@ -1,5 +1,8 @@
 {% if unit is defined and unit %}
     <div class="unit-card">
+        <div class="preview-box">
+            <div class="sprite {{ unit.type }} {{ unit.color }} idle"></div>
+        </div>
         <ul class="unit-stats">
             <li>Vitalité : {{ unit.vita }}</li>
             <li>Initiative : {{ unit.initiative }}</li>
