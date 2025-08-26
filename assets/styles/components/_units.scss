@@ -8,7 +8,7 @@ $target: '../../../public/assets/images/game/Factions/Units/';
 
 .preview-box {
     --previewW: 320px;
-    --previewH: 225px;
+    --previewH: 320px;
 
     width: var(--previewW);
     height: var(--previewH);
@@ -20,7 +20,7 @@ $target: '../../../public/assets/images/game/Factions/Units/';
 }
 
 .preview-box .sprite {
-
+    margin-top: -4rem;
     width: var(--w);
     height: var(--h);
     background-repeat: no-repeat;

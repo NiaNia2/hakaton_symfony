@@ -27,6 +27,7 @@
                               hx-trigger="change from:#unitOneType, change from:#unitOneColor"
                               hx-swap="none">
                             <input type="hidden" name="slot" value="one"/>
+                            <span>Équipier 1</span>
                             <label for="unitOneType">Classe</label>
                             <select id="unitOneType" name="type"
                                     hx-get="{{ path('units_colors_by_type') }}"
@@ -60,6 +61,7 @@
                               hx-trigger="change from:#unitTwoType, change from:#unitTwoColor"
                               hx-swap="none">
                             <input type="hidden" name="slot" value="two"/>
+                            <span>Équipier 2</span>
                             <label for="unitTwoType">Classe</label>
                             <select id="unitTwoType" name="type"
                                     hx-get="{{ path('units_colors_by_type') }}"
@@ -93,6 +95,7 @@
                               hx-trigger="change from:#unitThreeType, change from:#unitThreeColor"
                               hx-swap="none">
                             <input type="hidden" name="slot" value="three"/>
+                            <span>Équipier 3</span>
                             <label for="unitThreeType">Classe</label>
                             <select id="unitThreeType" name="type"
                                     hx-get="{{ path('units_colors_by_type') }}"
