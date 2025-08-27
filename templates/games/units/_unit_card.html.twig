@@ -1,0 +1,16 @@
+{% if unit is defined and unit %}
+    <div class="unit-card">
+        <div class="preview-box">
+            <div class="sprite {{ unit.type }} {{ unit.color }} idle"></div>
+        </div>
+        <div class="unit-content">
+            <ul class="unit-stats">
+                <li><i class="fa-solid fa-heart"></i> {{ unit.vita }}</li>
+                <li><i class="fa-solid fa-bolt"></i> {{ unit.initiative }}</li>
+                <li><i class="fa-solid fa-gavel"></i> {{ unit.att }}</li>
+                <li><i class="fa-solid fa-droplet"></i> {{ unit.mana }}</li>
+            </ul>
+            <p class="unit-desc">{{ unit.description }}</p>
+        </div>
+    </div>
+{% endif %}
