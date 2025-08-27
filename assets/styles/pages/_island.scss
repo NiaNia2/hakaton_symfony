@@ -43,6 +43,7 @@ $target: '../../../public/assets/images/game/';
     display: flex;
     justify-content: center;
     span {
+        font-weight: bold;
         width: auto;
         height: 100%;
         color: v.$color-error;
