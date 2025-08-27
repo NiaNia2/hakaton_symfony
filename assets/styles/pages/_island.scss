@@ -28,7 +28,7 @@ $target: '../../../public/assets/images/game/';
         width: auto;
         height: 100%;
         color: v.$color-primary;
-        margin: 0;
+        margin-bottom: 5px;
         padding: 3px 20% 10px;
         text-align: center;
         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
@@ -46,7 +46,7 @@ $target: '../../../public/assets/images/game/';
         width: auto;
         height: 100%;
         color: v.$color-error;
-        margin: 0;
+        margin-bottom: 1rem;
         padding: 3px 20% 10px;
         text-align: center;
         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
@@ -137,12 +137,12 @@ $target: '../../../public/assets/images/game/';
                             .unit-content {
                                 padding: 10%;
                                 width: 100%;
-                                height: auto;
-                                min-height: 0;
+                                min-height: 280px;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: space-between;
                                 align-items: center;
+                                font-weight: bold;
 
                                 background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
                                 background-size: cover;
@@ -154,7 +154,15 @@ $target: '../../../public/assets/images/game/';
                                     align-items: center;
                                     gap: 1rem;
                                     color: v.$color-primary;
-                                    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+                                    text-align: center;
+                                    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+                                    li {
+                                        padding: 10px 8px;
+                                        background-image: url("#{$target}UI/Banners/Carved_Regular.png");
+                                        background-size: calc(100% + 4px) calc(100% + 4px);
+                                        background-position: -2px;
+                                        background-repeat: no-repeat;
+                                    }
 
                                     .fa-heart {
                                         color: #ff4d4d;
@@ -199,6 +207,13 @@ $target: '../../../public/assets/images/game/';
                     #unitOne, #unitTwo, #unitThree {
                         #unitOneForm, #unitTwoForm, #unitThreeForm {
                             width: 65%;
+                        }
+                        #unitOnePreview, #unitTwoPreview, #unitThreePreview {
+                            .unit-card {
+                                .unit-content {
+
+                                }
+                            }
                         }
                     }
                 }
