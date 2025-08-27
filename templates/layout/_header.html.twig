@@ -6,15 +6,28 @@
 		<nav class="navbar_menu">
 			<div class="navbar_list_container">
 				<ul class="navbar_list">
-					<li>
-						<a class="" href="{{ path('home') }}">Accueil</a>
-					</li>
-					<li>
-						<a class="" href="{{ path('create_user') }}">Inscription</a>
-					</li>
-					<li>
-						<a class="" href="{{ path('app_login') }}">Connexion</a>
-					</li>
+					{% if app.user %}
+						<li>
+							<a class="btn-nav" href="{{ path('home') }}">Accueil</a>
+						</li>
+						<li>
+							<a class="btn-nav" href="{{ path('user',{'id' : app.user.id}) }}">Toi</a>
+						</li>
+						<li>
+
+							<a class="btn-nav" href="#">Lancer un combat</a>
+						</li>
+						<li>
+							<a class="btn-nav" href="{{ path('app_logout')}}">Deconnection</a>
+						</li>
+					{% else %}
+						<li>
+							<a class="btn-nav" href="{{ path('create_user') }}">Inscription</a>
+						</li>
+						<li>
+							<a class="btn-nav" href="{{ path('app_login') }}">Connexion</a>
+						</li>
+					{% endif %}
 				</ul>
 				<div class="dropdown">
 					<i class="fa-solid fa-bars"></i>
