@@ -1,0 +1,5 @@
+<div id="{{ previewId }}" hx-swap-oob="innerHTML">
+    {% if unit %}
+        {% include 'games/units/_unit_card.html.twig' with { unit: unit } %}
+    {% endif %}
+</div>
