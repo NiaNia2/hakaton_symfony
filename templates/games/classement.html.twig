@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{% endblock %}
+{% block body %}
+	<section>
+		<div>
+			<table>
+				<tr>
+					<th>Rang</th>
+					<th>Pseudo</th>
+					<th>Victoire</th>
+					<th>Défaite</th>
+					<th>Réussite</th>
+				</tr>
+			</table>
+			<tbody>
+				{% for player in players %}
+					{# On boucle sur la variable "players" envoyé par le controller #}
+					<tr>
+						<td>{{ loop.index }}</td>
+						{# "loop.index" = rang (1er, 2e, 3e...) #}
+						<td>{{ player.pseudo }}</td>
+
+						<td>{{ player.totalVictory }}</td>
+
+						<td>{{ player.totalDefeate }}</td>
+
+						<td>{{ player.successRate }}
+						</td>
+
+					</tr>
+				{% else %}
+
+					<tr>
+						<td colspan="5">Aucun joueur trouvé</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</div>
+	</section>
+
+
+{% endblock %}
