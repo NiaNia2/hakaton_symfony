@@ -58,132 +58,144 @@ $target: '../../../public/assets/images/game/';
     }
 }
 
-#island {
+#battle {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    .island {
-        width: 90%;
+    .battle {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5rem;
         .team-container {
-            width: 90%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 2rem;
-            .team-owner {
+            .title-area {
+                width: 95%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .title {
                 @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
             }
-            .team-card {
+            .battleground {
                 width: 100%;
-                margin-bottom: 1rem;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: wrap;
-
-                #unitOne, #unitTwo, #unitThree {
+                .vs {
                     width: 32%;
-                    height: 100%;
+                }
+                .team-card {
+                    width: 32%;
+                    margin-bottom: 1rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
+                    flex-wrap: wrap;
 
-                    #unitOneForm, #unitTwoForm, #unitThreeForm {
-                        width: 80%;
+                    #unitOne, #unitTwo, #unitThree {
+                        width: 32%;
+                        height: 100%;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-                        padding: 2rem;
-                        background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
-                        background-size: 100% 100%;
-                        background-position: left top;
-                        background-repeat: repeat;
-                        @include ribbon3();
-                        @include ribbon2("#{$target}UI/Ribbons/Ribbon_Blue_3Slides.png");
 
-                        #unitOneType, #unitTwoType, #unitThreeType, #unitOneColor, #unitTwoColor, #unitThreeColor {
-                            margin-bottom: 1rem;
-                            background: transparent;
-                            border: transparent;
-                            border-top: 3px solid v.$color-accent;
-                            border-bottom: 3px solid v.$color-accent;
-                            text-align: center;
-                        }
-                    }
-
-                    #unitOnePreview, #unitTwoPreview, #unitThreePreview {
-                        .unit-card {
-                            width: 100%;
-                            height: 100%;
+                        #unitOneForm, #unitTwoForm, #unitThreeForm {
+                            width: 80%;
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
                             align-items: center;
+                            padding: 2rem;
+                            background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
+                            background-size: 100% 100%;
+                            background-position: left top;
+                            background-repeat: repeat;
+                            @include ribbon3();
+                            @include ribbon2("#{$target}UI/Ribbons/Ribbon_Blue_3Slides.png");
 
-                            .preview-box {
-                                margin: 2rem 0;
-                                background-image: url("#{$target}Terrain/tilemap.png");
-                                background-size: 100% 100%;
+                            #unitOneType, #unitTwoType, #unitThreeType, #unitOneColor, #unitTwoColor, #unitThreeColor {
+                                margin-bottom: 1rem;
+                                background: transparent;
+                                border: transparent;
+                                border-top: 3px solid v.$color-accent;
+                                border-bottom: 3px solid v.$color-accent;
+                                text-align: center;
                             }
+                        }
 
-                            .unit-content {
-                                padding: 10%;
+                        #unitOnePreview, #unitTwoPreview, #unitThreePreview {
+                            .unit-card-battle {
                                 width: 100%;
-                                min-height: 280px;
+                                height: 100%;
                                 display: flex;
-                                flex-direction: column;
                                 justify-content: space-between;
                                 align-items: center;
-                                font-weight: bold;
 
-                                background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
-                                background-size: cover;
-                                background-repeat: round;
-
-                                .unit-stats {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    gap: 1rem;
-                                    color: v.$color-primary;
-                                    text-align: center;
-                                    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-                                    li {
-                                        padding: 10px 8px;
-                                        background-image: url("#{$target}UI/Banners/Carved_Regular.png");
-                                        background-size: calc(100% + 4px) calc(100% + 4px);
-                                        background-position: -2px;
-                                        background-repeat: no-repeat;
-                                    }
-
-                                    .fa-heart {
-                                        color: #ff4d4d;
-                                    }
-                                    .fa-bolt {
-                                        color: #ffd600;
-                                    }
-                                    .fa-gavel {
-                                        color: #d84315;
-                                    }
-                                    .fa-droplet {
-                                        color: #42a5f5;
-                                    }
+                                .preview-box {
+                                    background-image: url("#{$target}Terrain/tilemap.png");
+                                    background-size: 100% 100%;
                                 }
 
-                                .unit-desc {
-                                    width: 80%;
-                                    text-align: center;
-                                    color: v.$color-black;
-                                    text-shadow: 1px 1px 0 v.$color-primary, -1px -1px 0 v.$color-primary, 1px -1px 0 v.$color-primary, -1px  1px 0 v.$color-primary;
+                                .unit-content {
+                                    height: 320px;
+                                    padding: 2% 5%;
+                                    align-items: center;
+                                    font-weight: bold;
+
+                                    background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
+                                    background-size: cover;
+                                    background-repeat: round;
+
+                                    .unit-stats {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        color: v.$color-primary;
+                                        text-align: center;
+                                        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+
+                                        li {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            gap: 4px;
+                                            padding: 10px 15px;
+                                            background-image: url("#{$target}UI/Banners/Carved_Regular.png");
+                                            background-size: calc(100% + 4px) calc(100% + 4px);
+                                            background-position: -2px;
+                                            background-repeat: no-repeat;
+                                        }
+
+                                        .fa-heart {
+                                            color: #ff4d4d;
+                                        }
+
+                                        .fa-bolt {
+                                            color: #ffd600;
+                                        }
+
+                                        .fa-gavel {
+                                            color: #d84315;
+                                        }
+
+                                        .fa-droplet {
+                                            color: #42a5f5;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -195,8 +207,8 @@ $target: '../../../public/assets/images/game/';
 }
 
 @media screen and (min-width:1991px) {
-    #island {
-        .island {
+    #battle {
+        .battle {
             .island-title {
                 width: 50%;
             }
@@ -224,8 +236,8 @@ $target: '../../../public/assets/images/game/';
 }
 
 @media screen and (max-width:1215px) {
-    #island {
-        .island {
+    #battle {
+        .battle {
             .island-title {
 
             }
@@ -254,11 +266,8 @@ $target: '../../../public/assets/images/game/';
 
                         }
                         #unitOnePreview, #unitTwoPreview, #unitThreePreview {
-                            .unit-card {
+                            .unit-card-battle {
                                 .unit-content {
-                                    .unit-desc {
-                                        width: 210px;
-                                    }
                                 }
                             }
                         }
@@ -270,8 +279,8 @@ $target: '../../../public/assets/images/game/';
 }
 
 @media screen and (max-width:768px) {
-    #island {
-        .island {
+    #battle {
+        .battle {
             .island-title {
 
             }

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Repository\TeamsRepository;
 use App\Repository\UnitsRepository;
+use App\Service\TurnBasedBattleService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -117,4 +118,79 @@ final class GamesController extends AbstractController
             'controller_name' => 'GamesController',
         ]);
     }
+
+    #[Route('/battle/turn-based', name: 'battle_turn_based', methods: ['GET'])]
+    public function turnBased(Request $request, TeamsRepository $teamsRepository, TurnBasedBattleService $battle): Response
+    {
+        $teamAId = $request->query->get('teamA');
+        $teamBId = $request->query->get('teamB');
+
+        if (!$teamAId || !$teamBId) {
+            return $this->json(['error' => 'teamA et teamB sont requis'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $teamA = $teamsRepository->find($teamAId);
+        $teamB = $teamsRepository->find($teamBId);
+
+        if (!$teamA || !$teamB) {
+            return $this->json(['error' => 'Equipe introuvable'], Response::HTTP_NOT_FOUND);
+        }
+
+        $result = $battle->simulate($teamA, $teamB);
+
+        return $this->json($result);
+    }
+
+    #[Route('/battle/view', name: 'battle_view', methods: ['GET'])]
+    public function battleView(Request $request, TeamsRepository $teamsRepository, TurnBasedBattleService $battle): Response
+    {
+        $teamAId = $request->query->get('teamA');
+        $teamBId = $request->query->get('teamB');
+
+        if (!$teamAId || !$teamBId) {
+            throw $this->createNotFoundException('Paramètres teamA et teamB requis');
+        }
+
+        $teamA = $teamsRepository->find($teamAId);
+        $teamB = $teamsRepository->find($teamBId);
+
+        if (!$teamA || !$teamB) {
+            throw $this->createNotFoundException('Equipe introuvable');
+        }
+
+        $result = $battle->simulate($teamA, $teamB);
+
+        return $this->render('games/CombatSummary.html.twig', [
+            'teamA'  => $teamA,
+            'teamB'  => $teamB,
+            'result' => $result,
+        ]);
+    }
+
+    #[Route('/opponents', name: 'opponents_list', methods: ['GET'])]
+    public function listOpponents(TeamsRepository $teamsRepository): Response
+    {
+        $currentUser = $this->getUser();
+        $myTeam = $teamsRepository->findOneBy(['user' => $currentUser]);
+
+        // Equipes adverses complètes (3 unités) et exclure l'utilisateur courant
+        $qb = $teamsRepository->createQueryBuilder('t')
+            ->leftJoin('t.user', 'u')
+            ->addSelect('u')
+            ->where('t.unitOne IS NOT NULL')
+            ->andWhere('t.unitTwo IS NOT NULL')
+            ->andWhere('t.unitThree IS NOT NULL');
+
+        if ($currentUser) {
+            $qb->andWhere('u != :me')->setParameter('me', $currentUser);
+        }
+
+        $opponents = $qb->getQuery()->getResult();
+
+        return $this->render('games/opponents.html.twig', [
+            'myTeam'    => $myTeam,
+            'opponents' => $opponents,
+        ]);
+    }
+
 }
