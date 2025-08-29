@@ -23,37 +23,37 @@
             </div>
             <div class="battleground">
                 <div class="team-card">
-                    <div id="unitOne">
-                        <div id="unitOnePreview">
-                            {% if teamA.unitOne %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitOne } %}{% endif %}
+                    <div id="unit-A-one" class="unit-container" data-team="A" data-slot="one">
+                    <div id="unitOnePreview">
+                            {% if teamA.unitOne %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitOne, team: 'A', slot: 'one' } %}{% endif %}
                         </div>
                     </div>
-                    <div id="unitTwo">
-                        <div id="unitTwoPreview">
-                            {% if teamA.unitTwo %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitTwo } %}{% endif %}
+                    <div id="unit-A-two" class="unit-container" data-team="A" data-slot="two">
+                    <div id="unitTwoPreview">
+                            {% if teamA.unitTwo %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitTwo, team: 'A', slot: 'two' } %}{% endif %}
                         </div>
                     </div>
-                    <div id="unitThree">
-                        <div id="unitThreePreview">
-                            {% if teamA.unitThree %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitThree } %}{% endif %}
+                    <div id="unit-A-three" class="unit-container" data-team="A" data-slot="three">
+                    <div id="unitThreePreview">
+                            {% if teamA.unitThree %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamA.unitThree, team: 'A', slot: 'three' } %}{% endif %}
                         </div>
                     </div>
                 </div>
                 <div class="vs"></div>
                 <div class="team-card">
-                    <div id="unitOne">
-                        <div id="unitOnePreview">
-                            {% if teamB.unitOne %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitOne, advesary: true } %}{% endif %}
+                    <div id="unit-B-one" class="unit-container" data-team="B" data-slot="one">
+                    <div id="unitOnePreview">
+                            {% if teamB.unitOne %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitOne, team: 'B', slot: 'one', advesary: true } %}{% endif %}
                         </div>
                     </div>
-                    <div id="unitTwo">
-                        <div id="unitTwoPreview">
-                            {% if teamB.unitTwo %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitTwo, advesary: true } %}{% endif %}
+                    <div id="unit-B-two" class="unit-container" data-team="B" data-slot="two">
+                    <div id="unitTwoPreview">
+                            {% if teamB.unitTwo %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitTwo, team: 'B', slot: 'two', advesary: true } %}{% endif %}
                         </div>
                     </div>
-                    <div id="unitThree">
-                        <div id="unitThreePreview">
-                            {% if teamB.unitThree %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitThree, advesary: true } %}{% endif %}
+                    <div id="unit-B-three" class="unit-container" data-team="B" data-slot="three">
+                    <div id="unitThreePreview">
+                            {% if teamB.unitThree %}{% include 'games/units/_unit_card_battle.html.twig' with { unit: teamB.unitThree, team: 'B', slot: 'three', advesary: true } %}{% endif %}
                         </div>
                     </div>
                 </div>
@@ -68,6 +68,17 @@
                 {% else %}
                     <span class="badge bg-secondary">Egalité</span>
                 {% endif %}
+            </div>
+
+            <div class="mt-2" style="text-align:center;">
+                <a class="btn-alt"
+                        hx-swap="none"
+                        data-turns='{{ result.turns|json_encode(constant("JSON_HEX_TAG") b-or constant("JSON_HEX_AMP") b-or constant("JSON_HEX_APOS") b-or constant("JSON_HEX_QUOT")) }}'
+                        hx-on:click="(function(btn,evt){
+                            const turns = JSON.parse(btn.getAttribute('data-turns')||'[]');
+                            playTurns(turns);
+                        })(this,event)"
+                >Rejouer l'animation</a>
             </div>
 
             <div class="mt-4" style="width:100%; max-width: 960px;">
@@ -85,57 +96,41 @@
                                 {{ t.actor.team }}: {{ t.actor.name }} ({{ t.actor.slot }})
                             </span>
                             — Action:
-                            <span class="badge {{ t.action == 'special' ? 'bg-warning text-dark' : 'bg-info text-dark' }}">
-                                {{ t.action == 'special' ? 'Coup spécial' : 'Attaque' }}
+                            <span class="badge {{ t.action == 'special' ? 'bg-warning text-dark' : (t.action == 'heal' ? 'bg-success' : 'bg-info text-dark') }}">
+                                {% if t.action == 'heal' %}Soin{% elseif t.action == 'special' %}Coup spécial{% else %}Attaque{% endif %}
                             </span>
                         </div>
-                        <div>
-                            Cible:
-                            <span class="badge {{ t.target.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
-                                {{ t.target.team }}: {{ t.target.name }} ({{ t.target.slot }})
-                            </span>
-                            — Dégâts: <strong>{{ t.damage }}</strong>
-                            — Vita: {{ t.targetVitaBefore }} → <strong>{{ t.targetVitaAfter }}</strong>
-                            {% if not t.target.alive %}
-                                <span class="badge bg-dark">K.O</span>
-                            {% endif %}
-                        </div>
+                        {# --- ICI on distingue attaque vs soin --- #}
+                        {% if t.action == 'heal' %}
+                            <div>
+                                Cible (soin):
+                                <span class="badge {{ t.healTarget.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
+                                    {{ t.healTarget.team }}: {{ t.healTarget.name }} ({{ t.healTarget.slot }})
+                                </span>
+                                — Soin: <strong>{{ t.heal }}</strong>
+                                — Vita: {{ t.healVitaBefore }} → <strong>{{ t.healVitaAfter }}</strong>
+                            </div>
+                        {% else %}
+                            <div>
+                                Cible:
+                                <span class="badge {{ t.target.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
+                                    {{ t.target.team }}: {{ t.target.name }} ({{ t.target.slot }})
+                                </span>
+                                — Dégâts: <strong>{{ t.damage }}</strong>
+                                — Vita: {{ t.targetVitaBefore }} → <strong>{{ t.targetVitaAfter }}</strong>
+                                {% if t.target is defined and (t.target.alive is defined) and not t.target.alive %}
+                                    <span class="badge bg-dark">K.O</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </li>
                 {% endfor %}
                 </ol>
             {% endif %}
             </div>
 
-            <div class="mt-4" style="width:100%; max-width:960px;">
-                <h3>Etat final</h3>
-                <div class="row">
-                    <div class="col">
-                        <h5>Equipe A</h5>
-                        <ul class="list-group">
-                        {% for u in result.final.A %}
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                {{ u.name }} ({{ u.slot }}) — Vita: {{ u.vita }} — Att: {{ u.att }} — Init: {{ u.init }}
-                                {% if u.alive %}<span class="badge bg-success">Vivant</span>{% else %}<span class="badge bg-secondary">K.O</span>{% endif %}
-                            </li>
-                        {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h5>Equipe B</h5>
-                        <ul class="list-group">
-                        {% for u in result.final.B %}
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                {{ u.name }} ({{ u.slot }}) — Vita: {{ u.vita }} — Att: {{ u.att }} — Init: {{ u.init }}
-                                {% if u.alive %}<span class="badge bg-success">Vivant</span>{% else %}<span class="badge bg-secondary">K.O</span>{% endif %}
-                            </li>
-                        {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <a class="btn btn-outline-primary" href="{{ path('opponents_list') }}">Retour aux adversaires</a>
+            <div class="mt-4 redirecte">
+                <a class="btn-alt" href="{{ path('opponents_list') }}">Retour aux adversaires</a>
             </div>
         </div>
     </div>

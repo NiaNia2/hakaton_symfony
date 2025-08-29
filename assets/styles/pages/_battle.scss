@@ -63,6 +63,7 @@ $target: '../../../public/assets/images/game/';
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    padding-bottom: 3rem;
     .battle {
         width: 100%;
         display: flex;
@@ -77,6 +78,7 @@ $target: '../../../public/assets/images/game/';
             justify-content: center;
             align-items: center;
             gap: 2rem;
+            overflow: hidden;
             .title-area {
                 width: 95%;
                 display: flex;
@@ -87,15 +89,15 @@ $target: '../../../public/assets/images/game/';
                 @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
             }
             .battleground {
-                width: 100%;
+                width: 98%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 .vs {
-                    width: 32%;
+
                 }
                 .team-card {
-                    width: 32%;
+
                     margin-bottom: 1rem;
                     display: flex;
                     flex-direction: column;
@@ -103,41 +105,20 @@ $target: '../../../public/assets/images/game/';
                     align-items: center;
                     flex-wrap: wrap;
 
-                    #unitOne, #unitTwo, #unitThree {
-                        width: 32%;
+                    .unit-container {
+                        width: 100%;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-
-                        #unitOneForm, #unitTwoForm, #unitThreeForm {
-                            width: 80%;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 2rem;
-                            background-image: url("#{$target}UI/Buttons/Button_Disable_9Slides.png");
-                            background-size: 100% 100%;
-                            background-position: left top;
-                            background-repeat: repeat;
-                            @include ribbon3();
-                            @include ribbon2("#{$target}UI/Ribbons/Ribbon_Blue_3Slides.png");
-
-                            #unitOneType, #unitTwoType, #unitThreeType, #unitOneColor, #unitTwoColor, #unitThreeColor {
-                                margin-bottom: 1rem;
-                                background: transparent;
-                                border: transparent;
-                                border-top: 3px solid v.$color-accent;
-                                border-bottom: 3px solid v.$color-accent;
-                                text-align: center;
-                            }
-                        }
+                        transition: transform 600ms ease;
+                        will-change: transform;
 
                         #unitOnePreview, #unitTwoPreview, #unitThreePreview {
+                            width: 100%;
                             .unit-card-battle {
-                                width: 100%;
+                                width: 420px;
                                 height: 100%;
                                 display: flex;
                                 justify-content: space-between;
@@ -168,6 +149,7 @@ $target: '../../../public/assets/images/game/';
                                         text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 
                                         li {
+                                            width: 70px;
                                             display: flex;
                                             flex-direction: column;
                                             justify-content: space-between;
@@ -200,7 +182,18 @@ $target: '../../../public/assets/images/game/';
                             }
                         }
                     }
+                    .unit-container.exit-left {
+                        transform: translateX(calc(-100% + 70px));
+                        pointer-events: none;
+                    }
+                    .unit-container.exit-right {
+                        transform: translateX(calc(+100% - 70px));
+                        pointer-events: none;
+                    }
                 }
+            }
+            .redirecte {
+                margin-bottom: 1rem;
             }
         }
     }
@@ -278,25 +271,21 @@ $target: '../../../public/assets/images/game/';
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:860px) {
     #battle {
         .battle {
-            .island-title {
-
-            }
             .team-container {
-                .team-owner {
-
+                .mt-2 {
+                    display: none;
                 }
-                .team-card {
-                    justify-content: center;
-                    gap: 2.5rem;
-                    #unitOne, #unitTwo, #unitThree {
-                        width: 90%;
-                        #unitOneForm, #unitTwoForm, #unitThreeForm {
-                            width: auto;
-                        }
-                    }
+                .title-area {
+                    display: none;
+                }
+                .title {
+                    @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
+                }
+                .battleground {
+                    display: none;
                 }
             }
         }

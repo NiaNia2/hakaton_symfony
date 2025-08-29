@@ -173,7 +173,6 @@ final class GamesController extends AbstractController
         $currentUser = $this->getUser();
         $myTeam = $teamsRepository->findOneBy(['user' => $currentUser]);
 
-        // Equipes adverses complètes (3 unités) et exclure l'utilisateur courant
         $qb = $teamsRepository->createQueryBuilder('t')
             ->leftJoin('t.user', 'u')
             ->addSelect('u')

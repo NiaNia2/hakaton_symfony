@@ -61,6 +61,7 @@ $target: '../../../public/assets/images/game/';
 #island {
     width: 100%;
     min-height: 100vh;
+    padding-bottom: 3rem;
     display: flex;
     justify-content: center;
     .island {
@@ -79,6 +80,9 @@ $target: '../../../public/assets/images/game/';
             gap: 2rem;
             .team-owner {
                 @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
+            }
+            .team-owner-for-battle {
+                @include ribbon()
             }
             .team-card {
                 width: 100%;

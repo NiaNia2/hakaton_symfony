@@ -22,8 +22,18 @@
                     <p>Aucun adversaire avec une équipe complète pour le moment.</p>
                 {% else %}
                     {% for team in opponents %}
-                        <div class="team-owner">
+                        <div class="team-owner-for-battle">
                             <h2>Équipe de {{ team.user ? team.user.pseudo ?? team.user.email ?? ('User #' ~ team.user.id) : 'Anonyme' }}</h2>
+                        </div>
+                        <div class="mt-3" style="text-align:center;">
+                            {% if myTeam and myTeam.id and team.id and myTeam.unitOne and myTeam.unitTwo and myTeam.unitThree %}
+                                <a class="btn-alt"
+                                   href="{{ path('battle_view', { teamA: myTeam.id, teamB: team.id }) }}">
+                                    Combattre
+                                </a>
+                            {% else %}
+                                <button class="btn btn-secondary" disabled>Équipe incomplète</button>
+                            {% endif %}
                         </div>
                         <div class="team-card">
                             <div id="unitOne" class="not-islander">
@@ -47,16 +57,6 @@
                                     {% endif %}
                                 </div>
                             </div>
-                        </div>
-                        <div class="mt-3" style="text-align:center;">
-                            {% if myTeam and myTeam.id and team.id and myTeam.unitOne and myTeam.unitTwo and myTeam.unitThree %}
-                                <a class="btn-alt"
-                                   href="{{ path('battle_view', { teamA: myTeam.id, teamB: team.id }) }}">
-                                    Combattre
-                                </a>
-                            {% else %}
-                                <button class="btn btn-secondary" disabled>Équipe incomplète</button>
-                            {% endif %}
                         </div>
                     {% endfor %}
                 {% endif %}

@@ -52,6 +52,7 @@ $target: '../../../public/assets/images/game/UI/Buttons/';
     background-image: url("#{$target}Button_Red_3Slides_Pressed.png");
     background-size: contain;
     background-repeat: round;
+    cursor: pointer;
 }
 
 .btn-alt:hover,
