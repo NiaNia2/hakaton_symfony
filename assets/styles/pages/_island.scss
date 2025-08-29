@@ -61,6 +61,7 @@ $target: '../../../public/assets/images/game/';
 #island {
     width: 100%;
     min-height: 100vh;
+    padding-bottom: 3rem;
     display: flex;
     justify-content: center;
     .island {
@@ -79,6 +80,9 @@ $target: '../../../public/assets/images/game/';
             gap: 2rem;
             .team-owner {
                 @include ribbon("#{$target}UI/Ribbons/Ribbon_Red_3Slides.png");
+            }
+            .team-owner-for-battle {
+                @include ribbon()
             }
             .team-card {
                 width: 100%;
@@ -236,11 +240,20 @@ $target: '../../../public/assets/images/game/';
                 .team-card {
                     justify-content: center;
                     gap: 2.5rem;
+
+                    .islander {
+                        min-height: 935px;
+                        max-height: 935px;
+                    }
+                    .not-islander {
+                        min-height: 686px;
+                        max-height: 686px;
+                    }
+
                     #unitOne, #unitTwo, #unitThree {
                         width: 45%;
                         min-width: 45%;
-                        min-height: 935px;
-                        max-height: 935px;
+
                         #unitOneForm, #unitTwoForm, #unitThreeForm {
 
                         }
@@ -275,8 +288,6 @@ $target: '../../../public/assets/images/game/';
                     gap: 2.5rem;
                     #unitOne, #unitTwo, #unitThree {
                         width: 90%;
-                        min-height: 935px;
-                        max-height: 935px;
                         #unitOneForm, #unitTwoForm, #unitThreeForm {
                             width: auto;
                         }

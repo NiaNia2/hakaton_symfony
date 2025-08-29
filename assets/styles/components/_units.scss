@@ -6,6 +6,13 @@ $target: '../../../public/assets/images/game/Factions/Units/';
     to { background-position: calc(var(--w) * var(--frames) * -1) 0; }
 }
 
+@keyframes play-dead {
+    0% { background-position: 0 0; }
+    49.999% { background-position: -768px 0; }
+    50% { background-position: 0 -128px; }
+    100% { background-position: -768px -128px; }
+}
+
 .preview-box {
     --previewW: 320px;
     --previewH: 320px;
@@ -55,89 +62,101 @@ $target: '../../../public/assets/images/game/Factions/Units/';
 }
 
 .sprite.Lancer {
-  &.Blue {
-    &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Idle.png'); }
-    &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Run.png'); }
-    &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Attack.png'); }
-    &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
-  }
-  &.Red {
-    &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Idle.png'); }
-    &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Run.png'); }
-    &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Right_Attack.png'); }
-    &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
+    &.Blue {
+        &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Idle.png'); }
+        &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Run.png'); }
+        &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Attack.png'); }
+        &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
+    }
+    &.Red {
+        &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Idle.png'); }
+        &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Run.png'); }
+        &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Red Units/Lancer/Lancer_Right_Attack.png'); }
+        &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
 
-  }
-  &.Black {
-    &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Idle.png'); }
-    &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Run.png'); }
-    &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Right_Attack.png'); }
-    &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
-  }
-  &.Yellow {
-    &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Idle.png'); }
-    &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Run.png'); }
-    &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Right_Attack.png'); }
-    &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
-  }
+    }
+    &.Black {
+        &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Idle.png'); }
+        &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Run.png'); }
+        &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Black Units/Lancer/Lancer_Right_Attack.png'); }
+        &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
+    }
+    &.Yellow {
+        &.idle { --frames: 12; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Idle.png'); }
+        &.walk { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Run.png'); }
+        &.attack { --frames: 3; --w: 320px; --h: 320px; --dure: 500ms; background-image: url('#{$target}Yellow Units/Lancer/Lancer_Right_Attack.png'); }
+        &.defence { --frames: 6; --w: 320px; --h: 320px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Lancer/Lancer_Right_Defence.png'); }
+    }
 }
 
 .sprite.Monk {
-  &.Blue {
-    &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Idle.png'); }
-    &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Run.png'); }
-    &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Monk/Heal.png'); }
-    &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
-  }
-  &.Red {
-    &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Monk/Idle.png'); }
-    &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Monk/Run.png'); }
-    &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Red Units/Monk/Heal.png'); }
-    &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
-
-  }
-  &.Black {
-    &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Monk/Idle.png'); }
-    &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Monk/Run.png'); }
-    &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Black Units/Monk/Heal.png'); }
-    &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
-  }
-  &.Yellow {
-    &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Monk/Idle.png'); }
-    &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Monk/Run.png'); }
-    &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Yellow Units/Monk/Heal.png'); }
-    &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
-  }
+    &.Blue {
+        &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Idle.png'); }
+        &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Run.png'); }
+        &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Monk/Heal.png'); }
+        &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
+    }
+    &.Red {
+        &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Monk/Idle.png'); }
+        &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Monk/Run.png'); }
+        &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Red Units/Monk/Heal.png'); }
+        &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
+    }
+    &.Black {
+        &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Monk/Idle.png'); }
+        &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Monk/Run.png'); }
+        &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Black Units/Monk/Heal.png'); }
+        &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
+    }
+    &.Yellow {
+        &.idle { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Monk/Idle.png'); }
+        &.walk { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Monk/Run.png'); }
+        &.heal { --frames: 11; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Yellow Units/Monk/Heal.png'); }
+        &.healEffect { --frames: 11; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Monk/Heal_Effect.png'); }
+    }
 }
 
 .sprite.Warrior {
-  &.Blue {
-    &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Idle.png'); }
-    &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Run.png'); }
-    &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack1.png'); }
-    &.speattack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
-    &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
-  }
-  &.Red {
-    &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Idle.png'); }
-    &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Run.png'); }
-    &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Attack1.png'); }
-    &.speattack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
-    &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
+    &.Blue {
+        &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Idle.png'); }
+        &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Run.png'); }
+        &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack1.png'); }
+        &.speAttack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
+        &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
+    }
+    &.Red {
+        &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Idle.png'); }
+        &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Run.png'); }
+        &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Red Units/Warrior/Warrior_Attack1.png'); }
+        &.speAttack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
+        &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
 
-  }
-  &.Black {
-    &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Idle.png'); }
-    &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Run.png'); }
-    &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Attack1.png'); }
-    &.speattack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
-    &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
-  }
-  &.Yellow {
-    &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Idle.png'); }
-    &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Run.png'); }
-    &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Attack1.png'); }
-    &.speattack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
-    &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
-  }
+    }
+    &.Black {
+        &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Idle.png'); }
+        &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Run.png'); }
+        &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Black Units/Warrior/Warrior_Attack1.png'); }
+        &.speAttack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
+        &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
+    }
+    &.Yellow {
+        &.idle { --frames: 8; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Idle.png'); }
+        &.walk { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Run.png'); }
+        &.attack { --frames: 4; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Yellow Units/Warrior/Warrior_Attack1.png'); }
+        &.speAttack { --frames: 4; --w: 192px; --h: 192px; --dure: 500ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Attack2.png'); }
+        &.defence { --frames: 6; --w: 192px; --h: 192px; --dure: 1000ms; background-image: url('#{$target}Blue Units/Warrior/Warrior_Guard.png'); }
+    }
+}
+
+.preview-box .dead {
+    --frames: 6;
+    --w: 128px;
+    --h: 128px;
+    --dure: 1400ms;
+
+    width: var(--w);
+    height: var(--h);
+
+    background-image: url('../../../public/assets/images/game/Effect/Dead.png');
+    animation: play-dead var(--dure) steps(var(--frames)) 1 forwards;
 }
