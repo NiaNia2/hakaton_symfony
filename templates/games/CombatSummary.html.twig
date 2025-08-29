@@ -59,17 +59,6 @@
                 </div>
             </div>
 
-            <div class="mt-3" style="text-align:center;">
-                {% set winner = result.winner %}
-                {% if winner == 'A' %}
-                    <span class="badge bg-success">Vainqueur: Equipe A</span>
-                {% elseif winner == 'B' %}
-                    <span class="badge bg-success">Vainqueur: Equipe B</span>
-                {% else %}
-                    <span class="badge bg-secondary">Egalité</span>
-                {% endif %}
-            </div>
-
             <div class="mt-2" style="text-align:center;">
                 <a class="btn-alt"
                         hx-swap="none"
@@ -78,7 +67,7 @@
                             const turns = JSON.parse(btn.getAttribute('data-turns')||'[]');
                             playTurns(turns);
                         })(this,event)"
-                >Rejouer l'animation</a>
+                >Jouer l'animation</a>
             </div>
 
             <div class="mt-4" style="width:100%; max-width: 960px;">
@@ -86,47 +75,57 @@
                 {% if result.turns is empty %}
                     <p>Aucun tour (aucune unité disponible).</p>
                 {% else %}
-                <ol class="list-group list-group-numbered">
-                {% for t in result.turns %}
-                    <li class="list-group-item" style="display:flex; flex-direction:column; gap:.25rem;">
-                        <div>
-                            <strong>Tour {{ t.order }}</strong>
-                            — Acteur:
-                            <span class="badge {{ t.actor.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
-                                {{ t.actor.team }}: {{ t.actor.name }} ({{ t.actor.slot }})
-                            </span>
-                            — Action:
-                            <span class="badge {{ t.action == 'special' ? 'bg-warning text-dark' : (t.action == 'heal' ? 'bg-success' : 'bg-info text-dark') }}">
-                                {% if t.action == 'heal' %}Soin{% elseif t.action == 'special' %}Coup spécial{% else %}Attaque{% endif %}
-                            </span>
-                        </div>
-                        {# --- ICI on distingue attaque vs soin --- #}
-                        {% if t.action == 'heal' %}
+                    <ol class="list-group list-group-numbered">
+                    {% for t in result.turns %}
+                        <li class="list-group-item" style="display:flex; flex-direction:column; gap:.25rem;">
                             <div>
-                                Cible (soin):
-                                <span class="badge {{ t.healTarget.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
-                                    {{ t.healTarget.team }}: {{ t.healTarget.name }} ({{ t.healTarget.slot }})
+                                <strong>Tour {{ t.order }}</strong>
+                                — Acteur:
+                                <span class="badge {{ t.actor.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
+                                    {{ t.actor.team }}: {{ t.actor.name }} ({{ t.actor.slot }})
                                 </span>
-                                — Soin: <strong>{{ t.heal }}</strong>
-                                — Vita: {{ t.healVitaBefore }} → <strong>{{ t.healVitaAfter }}</strong>
-                            </div>
-                        {% else %}
-                            <div>
-                                Cible:
-                                <span class="badge {{ t.target.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
-                                    {{ t.target.team }}: {{ t.target.name }} ({{ t.target.slot }})
+                                — Action:
+                                <span class="badge {{ t.action == 'special' ? 'bg-warning text-dark' : (t.action == 'heal' ? 'bg-success' : 'bg-info text-dark') }}">
+                                    {% if t.action == 'heal' %}Soin{% elseif t.action == 'special' %}Coup spécial{% else %}Attaque{% endif %}
                                 </span>
-                                — Dégâts: <strong>{{ t.damage }}</strong>
-                                — Vita: {{ t.targetVitaBefore }} → <strong>{{ t.targetVitaAfter }}</strong>
-                                {% if t.target is defined and (t.target.alive is defined) and not t.target.alive %}
-                                    <span class="badge bg-dark">K.O</span>
-                                {% endif %}
                             </div>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-                </ol>
-            {% endif %}
+                            {# --- ICI on distingue attaque vs soin --- #}
+                            {% if t.action == 'heal' %}
+                                <div>
+                                    Cible (soin):
+                                    <span class="badge {{ t.healTarget.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
+                                        {{ t.healTarget.team }}: {{ t.healTarget.name }} ({{ t.healTarget.slot }})
+                                    </span>
+                                    — Soin: <strong>{{ t.heal }}</strong>
+                                    — Vita: {{ t.healVitaBefore }} → <strong>{{ t.healVitaAfter }}</strong>
+                                </div>
+                            {% else %}
+                                <div>
+                                    Cible:
+                                    <span class="badge {{ t.target.team == 'A' ? 'bg-primary' : 'bg-danger' }}">
+                                        {{ t.target.team }}: {{ t.target.name }} ({{ t.target.slot }})
+                                    </span>
+                                    — Dégâts: <strong>{{ t.damage }}</strong>
+                                    — Vita: {{ t.targetVitaBefore }} → <strong>{{ t.targetVitaAfter }}</strong>
+                                    {% if t.target is defined and (t.target.alive is defined) and not t.target.alive %}
+                                        <span class="badge bg-dark">K.O</span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    </ol>
+                {% endif %}
+                <div class="mt-3" style="text-align:center;">
+                    {% set winner = result.winner %}
+                    {% if winner == 'A' %}
+                        <span class="badge bg-success">Vainqueur: Equipe A</span>
+                    {% elseif winner == 'B' %}
+                        <span class="badge bg-success">Vainqueur: Equipe B</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Egalité</span>
+                    {% endif %}
+                </div>
             </div>
 
             <div class="mt-4 redirecte">
