@@ -55,6 +55,7 @@ class SecurityController extends AbstractController
                 }
 
                 $user->setMmr(0);
+                $user->setStatus('Online');
                 $user->setRoles(['ROLE_USER']);
                 $user->setCreatedAt(new \DateTimeImmutable());
                 $user->setPassword(
