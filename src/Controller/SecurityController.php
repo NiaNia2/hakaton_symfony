@@ -54,6 +54,7 @@ class SecurityController extends AbstractController
                     return $this->redirectToRoute('create_user');
                 }
 
+                $user->setMmr(0);
                 $user->setRoles(['ROLE_USER']);
                 $user->setCreatedAt(new \DateTimeImmutable());
                 $user->setPassword(
