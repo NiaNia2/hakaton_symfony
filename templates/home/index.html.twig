@@ -1,7 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
+	<section class="home-container">
+		<div class="home-content">
+			{% if app.user %}
+				<div class="titre">
+					<h1>Bienvenue
+						{{ app.user.pseudo }}</h1>
+				</div>
+			{% endif %}
+			<div class="banner-content">
+				<div class="banner">
+					<h2>Pas besoin d’être grand pour mettre la raclée du siècle.</h2>
+				</div>
+			</div>
+			<div class="concept-content">
+				<div class="concept">
+					<h2>Compose ton trio de choc</h2>
+					<p>Choisis 3 petits combattants parmi différents personnages. Chacun a ses propres forces et faiblesses : certains frappent fort, d’autres protègent mieux, et d’autres encore sont rapides. Ton défi, c’est de trouver la meilleure combinaison pour former une équipe équilibrée et prête à se battre.
+					</p>
+				</div>
+			</div>
 
+			<div class="concept-content">
+				<div class="concept">
+					<h2>Affronte et rentre dans le calssement</h2>
+					<p>Ton équipe de 3 affronte une autre équipe de 3 dans un combat rapide et stratégique. Le but est simple : mettre K.O. tous les adversaires avant qu’ils ne t’éliminent. Pas besoin d’être grand pour décrocher la victoire, il suffit de bien choisir, bien jouer… et mettre la raclée du siècle !
+					</p>
+				</div>
+			</div>
+			<div class="btn-container">
+
+				{% if app.user %}
+					<a class="btn-home" href="{{ path('games')}}">Mon île</a>
+				{% else %}
+					<a class="btn-home" href="{{ path('create_user') }}">Inscription</a>
+					<a class="btn-home" href="{{ path('app_login') }}">Connexion</a>
+				{% endif %}
+			</div>
+
+		</div>
+	</section>
 {% endblock %}

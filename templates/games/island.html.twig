@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if app.user.id == team.user.id%}
+        Mon île
+    {% else %}
+        Île de {{ user.pseudo }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <section id="island">
+        <div class="island">
+            <div class="team-container">
+                <div class="team-owner">
+                    {% if app.user.id == team.user.id%}
+                        <h2>Mon équipe</h2>
+                    {% else %}
+                        <h2>Équipe de {{ user.pseudo }}</h2>
+                    {% endif %}
+                </div>
+                <div class="team-card">
+                    {% set fallbackType = types|first %}
+                    <div id="unitOne" {% if app.user.id == team.user.id %}class="islander"{% endif %}>
+                        {% if app.user.id == team.user.id%}
+                            <form id="unitOneForm"
+                                  hx-post="{{ path('team_save_unit') }}"
+                                  hx-trigger="change from:#unitOneType, change from:#unitOneColor"
+                                  hx-swap="none">
+                                <input type="hidden" name="slot" value="one"/>
+                                <span>Équipier 1</span>
+                                <label for="unitOneType">Classe</label>
+                                <select id="unitOneType" name="type"
+                                        hx-get="{{ path('units_colors_by_type') }}"
+                                        hx-trigger="change"
+                                        hx-target="#unitOneColor"
+                                        hx-swap="innerHTML">
+                                    <option value="" disabled {{ (unitOneType|default(null)) is null ? 'selected' : '' }}>— choisir une classe —</option>
+                                    {% for row in types %}
+                                        <option value="{{ row }}" {{ row == (unitOneType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="unitOneColor">Archétype</label>
+                                <select id="unitOneColor" name="color"
+                                        hx-get="{{ path('units_colors_by_type', { type: unitOneType|default(fallbackType) }) }}"
+                                        hx-trigger="load"
+                                        hx-swap="innerHTML">
+                                    {% if (unitOneColor|default(null)) is null %}
+                                        <option value="" disabled selected>— choisir un archétype —</option>
+                                    {% endif %}
+                                </select>
+                            </form>
+                        {% endif %}
+                        <div id="unitOnePreview">
+                            {% if team and team.unitOne %}
+                                {% include 'games/units/_unit_card.html.twig' with { unit: team.unitOne } %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div id="unitTwo" {% if app.user.id == team.user.id %}class="islander"{% endif %}>
+                        {% if app.user.id == team.user.id%}
+                            <form id="unitTwoForm"
+                                  hx-post="{{ path('team_save_unit') }}"
+                                  hx-trigger="change from:#unitTwoType, change from:#unitTwoColor"
+                                  hx-swap="none">
+                                <input type="hidden" name="slot" value="two"/>
+                                <span>Équipier 2</span>
+                                <label for="unitTwoType">Classe</label>
+                                <select id="unitTwoType" name="type"
+                                        hx-get="{{ path('units_colors_by_type') }}"
+                                        hx-trigger="change"
+                                        hx-target="#unitTwoColor"
+                                        hx-swap="innerHTML">
+                                    <option value="" disabled {{ (unitTwoType|default(null)) is null ? 'selected' : '' }}>— choisir une classe —</option>
+                                    {% for row in types %}
+                                        <option value="{{ row }}" {{ row == (unitTwoType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="unitTwoColor">Archétype</label>
+                                <select id="unitTwoColor" name="color"
+                                        hx-get="{{ path('units_colors_by_type', { type: unitTwoType|default(fallbackType) }) }}"
+                                        hx-trigger="load"
+                                        hx-swap="innerHTML">
+                                    {% if (unitTwoColor|default(null)) is null %}
+                                        <option value="" disabled selected>— choisir un archétype —</option>
+                                    {% endif %}
+                                </select>
+                            </form>
+                        {% endif %}
+                        <div id="unitTwoPreview">
+                            {% if team and team.unitTwo %}
+                                {% include 'games/units/_unit_card.html.twig' with { unit: team.unitTwo } %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div id="unitThree" {% if app.user.id == team.user.id %}class="islander"{% endif %}>
+                        {% if app.user.id == team.user.id%}
+                            <form id="unitThreeForm"
+                                  hx-post="{{ path('team_save_unit') }}"
+                                  hx-trigger="change from:#unitThreeType, change from:#unitThreeColor"
+                                  hx-swap="none">
+                                <input type="hidden" name="slot" value="three"/>
+                                <span>Équipier 3</span>
+                                <label for="unitThreeType">Classe</label>
+                                <select id="unitThreeType" name="type"
+                                        hx-get="{{ path('units_colors_by_type') }}"
+                                        hx-trigger="change"
+                                        hx-target="#unitThreeColor"
+                                        hx-swap="innerHTML">
+                                    <option value="" disabled {{ (unitThreeType|default(null)) is null ? 'selected' : '' }}>— choisir une classe —</option>
+                                    {% for row in types %}
+                                        <option value="{{ row }}" {{ row == (unitThreeType|default(null)) ? 'selected' : '' }}>{{ row }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="unitThreeColor">Archétype</label>
+                                <select id="unitThreeColor" name="color"
+                                        hx-get="{{ path('units_colors_by_type', { type: unitThreeType|default(fallbackType) }) }}"
+                                        hx-trigger="load"
+                                        hx-swap="innerHTML">
+                                    {% if (unitThreeColor|default(null)) is null %}
+                                        <option value="" disabled selected>— choisir un archétype —</option>
+                                    {% endif %}
+                                </select>
+                            </form>
+                        {% endif %}
+                        <div id="unitThreePreview">
+                            {% if team and team.unitThree %}
+                                {% include 'games/units/_unit_card.html.twig' with { unit: team.unitThree } %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <a href="{{ path('opponents_list') }}" class="btn-alt">
+                    Voir les adversaires
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

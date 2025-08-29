@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as v;
+
+.home-container {
+    width: 100%;
+
+    .home-content {
+        width: 100%;
+
+        .titre {
+            text-align: center;
+        }
+
+        .banner-content {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            .banner {
+                width: 70%;
+                display: inline-block;
+                padding: 10px 1rem 14px;
+                background-image: url("../../../public/assets/images/game/UI/Ribbons/Ribbon_Blue_3Slides.png");
+                background-size: calc(100% + 10px) 100%;
+                background-position: -5px;
+                text-align: center;
+            }
+        }
+
+        .concept-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .concept {
+
+                width: 50%;
+                text-align: center;
+                background-image: url("../../../public/assets/images/game/UI/Banners/Carved_9Slides.png");
+                background-size: calc(100% + 10px) 100%;
+                background-position: -5px;
+            }
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+    }
+}

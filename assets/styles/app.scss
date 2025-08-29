@@ -1,5 +1,7 @@
 // Pages
 @use "pages/home";
+@use "pages/island";
+@use "pages/battle";
 
 //Layouts
 @use "layout/header";
@@ -8,6 +10,7 @@
 // Components
 @use "components/buttons";
 @use "components/form";
+@use "components/units";
 
 // Abstracts
 @use "abstracts/variables";

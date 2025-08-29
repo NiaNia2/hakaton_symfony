@@ -1,0 +1,31 @@
+{% if unit is defined and unit %}
+    {% if advesary is defined and advesary %}
+        <div class="unit-card-battle" data-team="{{ team }}" data-slot="{{ slot }}">
+            <div class="preview-box">
+                <div id="sprite-{{ team }}-{{ slot }}" class="sprite {{ unit.type }} {{ unit.color }} idle"></div>
+            </div>
+            <div class="unit-content">
+                <ul class="unit-stats">
+                    <li><i class="fa-solid fa-heart"></i> <span id="vita-{{ team }}-{{ slot }}">{{ unit.vita }}</span></li>
+                    <li><i class="fa-solid fa-bolt"></i> {{ unit.initiative }}</li>
+                    <li><i class="fa-solid fa-gavel"></i> {{ unit.att }}</li>
+                    <li><i class="fa-solid fa-droplet"></i> {{ unit.mana }}</li>
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        <div class="unit-card-battle" data-team="{{ team }}" data-slot="{{ slot }}">
+            <div class="unit-content">
+                <ul class="unit-stats">
+                    <li><i class="fa-solid fa-heart"></i> <span id="vita-{{ team }}-{{ slot }}">{{ unit.vita }}</span></li>
+                    <li><i class="fa-solid fa-bolt"></i> {{ unit.initiative }}</li>
+                    <li><i class="fa-solid fa-gavel"></i> {{ unit.att }}</li>
+                    <li><i class="fa-solid fa-droplet"></i> {{ unit.mana }}</li>
+                </ul>
+            </div>
+            <div class="preview-box">
+                <div id="sprite-{{ team }}-{{ slot }}" class="sprite {{ unit.type }} {{ unit.color }} idle"></div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}

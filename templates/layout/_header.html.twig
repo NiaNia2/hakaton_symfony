@@ -1,20 +1,59 @@
 <header class="container" id="header">
-    <div class="header">
-        <div class="logo-container">
-            {#<a href="{{ path('home', {'_locale': app.request.locale}) }}"><img src="{{ asset('images/logo/!Change-me!.png') }}" alt="{{ site.name }}"></a>#}
-        </div>
-        <nav class="navbar_menu">
-            <div class="navbar_list_container">
-                <ul class="navbar_list">
-                    <li><a href="{{ path('home') }}">Accueil</a></li>
-                </ul>
-                <div class="dropdown">
-                    <i class="fa-solid fa-bars"></i>
-                    <ul class="dropdown-content">
-                        <li><a href="{{ path('home') }}">Accueil</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+	<div class="header">
+		<div class="logo-container">
+			<a href="{{ path('home') }}"><img src="{{ asset('assets/images/logo/Tiny1.png') }}" alt="{{ site.name }}"></a>
+		</div>
+		<nav class="navbar_menu">
+			<div class="navbar_list_container">
+				<ul class="navbar_list">
+					<li>
+						<a class="btn-nav" href="{{ path('home') }}">Accueil</a>
+					</li>
+					{% if app.user %}
+
+						<li>
+							<a class="btn-nav" href="{{ path('island',{ 'id': app.user.id }) }}">Mon île</a>
+						</li>
+						<li>
+							<a class="btn-nav" href="{{ path('app_logout')}}">Deconnection</a>
+						</li>
+					{% else %}
+
+						<li>
+							<a class="btn-nav" href="{{ path('create_user') }}">Inscription</a>
+						</li>
+						<li>
+							<a class="btn-nav" href="{{ path('app_login') }}">Connexion</a>
+						</li>
+					{% endif %}
+
+				</ul>
+				<div class="dropdown">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="dropdown-content">
+						<li>
+							<a class="" href="{{ path('home') }}">Accueil</a>
+						</li>
+						{% if app.user %}
+
+							<li>
+								<a class="" href="{{ path('user',{'id' : app.user.id}) }}">Mon île</a>
+							</li>
+							<li>
+								<a class="" href="{{ path('app_logout')}}">Deconnection</a>
+							</li>
+						{% else %}
+
+							<li>
+								<a class="" href="{{ path('create_user') }}">Inscription</a>
+							</li>
+							<li>
+								<a class="" href="{{ path('app_login') }}">Connexion</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </header>
