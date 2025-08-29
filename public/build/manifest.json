@@ -22,7 +22,6 @@
   "build/images/Warrior_Guard.png": "/build/images/Warrior_Guard.85bb5b2b.png",
   "build/images/Lancer_Right_Defence.png": "/build/images/Lancer_Right_Defence.f2cc4045.png",
   "build/images/tilemap.png": "/build/images/tilemap.c608755b.png",
-  "build/images/Carved_9Slides.png": "/build/images/Carved_9Slides.8e607773.png",
   "build/images/Idle.png": "/build/images/Idle.d0dc03d3.png",
   "build/images/Run.png": "/build/images/Run.e69b49e7.png",
   "build/images/Archer_Run.png": "/build/images/Archer_Run.56c01feb.png",
@@ -38,10 +37,8 @@
   "build/images/Button_Hover_3Slides.png": "/build/images/Button_Hover_3Slides.94e816fe.png",
   "build/images/Button_Blue_3Slides.png": "/build/images/Button_Blue_3Slides.9e5fd5ef.png",
   "build/images/Button_Disable_3Slides.png": "/build/images/Button_Disable_3Slides.3b1e1db8.png",
+  "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
   "build/images/Button_Hover.png": "/build/images/Button_Hover.bb947d32.png",
   "build/images/Button_Disable.png": "/build/images/Button_Disable.b32a13a8.png",
-  "build/images/Arrow.png": "/build/images/Arrow.a6c2fe7a.png",
-  "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
-  "build/images/Banner_Connection_Up.png": "/build/images/Banner_Connection_Up.43f0a041.png",
-  "build/images/Tilemap_Flat.png": "/build/images/Tilemap_Flat.dfde89d9.png"
+  "build/images/Arrow.png": "/build/images/Arrow.a6c2fe7a.png"
 }
