@@ -34,13 +34,20 @@
   "build/images/Ribbon_Blue_3Slides.png": "/build/images/Ribbon_Blue_3Slides.116fbc3c.png",
   "build/images/Button_Disable_9Slides.png": "/build/images/Button_Disable_9Slides.31b1c8bf.png",
   "build/images/Carved_3Slides.png": "/build/images/Carved_3Slides.0d97f485.png",
+  "build/images/Button_Red_3Slides.png": "/build/images/Button_Red_3Slides.83464098.png",
   "build/images/Button_Hover_3Slides.png": "/build/images/Button_Hover_3Slides.94e816fe.png",
   "build/images/Button_Blue_3Slides.png": "/build/images/Button_Blue_3Slides.9e5fd5ef.png",
   "build/images/Button_Disable_3Slides.png": "/build/images/Button_Disable_3Slides.3b1e1db8.png",
+  "build/images/Button_Red_3Slides_Pressed.png": "/build/images/Button_Red_3Slides_Pressed.26601cdd.png",
+  "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
   "build/images/Button_Hover.png": "/build/images/Button_Hover.bb947d32.png",
   "build/images/Button_Disable.png": "/build/images/Button_Disable.b32a13a8.png",
   "build/images/Arrow.png": "/build/images/Arrow.a6c2fe7a.png",
-  "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
-  "build/images/Banner_Connection_Up.png": "/build/images/Banner_Connection_Up.43f0a041.png",
-  "build/images/Tilemap_Flat.png": "/build/images/Tilemap_Flat.dfde89d9.png"
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.js",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.js",
+  "build/images/Dead.png": "/build/images/Dead.8550d422.png",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js"
 }
