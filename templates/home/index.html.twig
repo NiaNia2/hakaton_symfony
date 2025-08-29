@@ -35,7 +35,7 @@
 			<div class="btn-container">
 
 				{% if app.user %}
-					<a class="btn-home" href="{{ path('games')}}">Mon île</a>
+					<a class="btn-home" href="{{ path('island',{ 'id': app.user.id }) }}">Mon île</a>
 				{% else %}
 					<a class="btn-home" href="{{ path('create_user') }}">Inscription</a>
 					<a class="btn-home" href="{{ path('app_login') }}">Connexion</a>

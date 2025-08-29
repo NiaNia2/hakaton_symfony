@@ -37,7 +37,7 @@
 						{% if app.user %}
 
 							<li>
-								<a class="" href="{{ path('user',{'id' : app.user.id}) }}">Mon île</a>
+								<a class="" href="{{ path('island',{ 'id': app.user.id }) }}">Mon île</a>
 							</li>
 							<li>
 								<a class="" href="{{ path('app_logout')}}">Deconnection</a>
