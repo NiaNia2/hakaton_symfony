@@ -1,5 +1,25 @@
 @use "../abstracts/variables" as v;
 
+@keyframes show-content {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dont-show-content {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 :root {
     --navbar-height: 100px;
 }
@@ -44,7 +64,7 @@
                     gap: 1rem;
 
                     li a {
-                        transition: all 0.2 ease;
+                        transition: all 0.2s ease;
                     }
 
                 }
@@ -58,17 +78,12 @@
                     i {
                         color: v.$color-secondary;
                     }
-
-                    ;
                 }
-
-                ;
 
                 .dropdown:hover {
                     cursor: pointer;
-                }
 
-                ;
+                }
 
                 .dropdown-content {
                     position: absolute;
@@ -85,10 +100,9 @@
 
                     li a:hover {
                         border-bottom: 1px solid v.$color-secondary;
+
                     }
                 }
-
-                ;
             }
         }
     }
@@ -109,7 +123,7 @@
 @media screen and (max-width:768px) {
     #header {
         .header {
-            .navbar__menu {
+            .navbar_menu {
                 .navbar_list_container {
                     .navbar_list {
                         display: none;
@@ -119,8 +133,6 @@
                         position: relative;
                         display: inherit;
                     }
-
-                    ;
                 }
             }
         }

@@ -22,7 +22,7 @@ $target: '../../../public/assets/images/game/UI/Buttons/';
 }
 
 .btn-nav {
-    padding: 1rem 2rem;
+    padding: 10px 1rem 14px;
     background-image: url("#{$target}Button_Disable.png");
     background-size: cover;
     background-repeat: round;
@@ -30,9 +30,9 @@ $target: '../../../public/assets/images/game/UI/Buttons/';
 
 .btn-home {
     background-image: url("#{$target}Button_Blue_3Slides.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: round;
-    padding: 0.5rem;
+    padding: 10px 1rem 14px;
 }
 
 .btn-nav:hover,
