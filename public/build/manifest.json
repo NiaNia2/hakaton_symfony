@@ -2,8 +2,8 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-e346be.js",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js",
   "build/images/WaterSky.png": "/build/images/WaterSky.985a6d4d.png",
   "build/fonts/Baloo2-Bold.ttf": "/build/fonts/Baloo2-Bold.30b7d389.ttf",
   "build/fonts/fa-solid-900.woff2": "/build/fonts/fa-solid-900.f54756da.woff2",
@@ -19,6 +19,7 @@
   "build/images/Heal_Effect.png": "/build/images/Heal_Effect.2e40b1b9.png",
   "build/images/Warrior_Attack2.png": "/build/images/Warrior_Attack2.f9c85224.png",
   "build/images/Warrior_Attack1.png": "/build/images/Warrior_Attack1.67781dc1.png",
+  "build/images/Dead.png": "/build/images/Dead.8550d422.png",
   "build/images/Warrior_Guard.png": "/build/images/Warrior_Guard.85bb5b2b.png",
   "build/images/Lancer_Right_Defence.png": "/build/images/Lancer_Right_Defence.f2cc4045.png",
   "build/images/tilemap.png": "/build/images/tilemap.c608755b.png",
@@ -42,12 +43,5 @@
   "build/images/Carved_Regular.png": "/build/images/Carved_Regular.3f65cccc.png",
   "build/images/Button_Hover.png": "/build/images/Button_Hover.bb947d32.png",
   "build/images/Button_Disable.png": "/build/images/Button_Disable.b32a13a8.png",
-  "build/images/Arrow.png": "/build/images/Arrow.a6c2fe7a.png",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-a8e870.js",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-b4ba34.js",
-  "build/images/Dead.png": "/build/images/Dead.8550d422.png",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-f51ac6.js"
+  "build/images/Arrow.png": "/build/images/Arrow.a6c2fe7a.png"
 }
