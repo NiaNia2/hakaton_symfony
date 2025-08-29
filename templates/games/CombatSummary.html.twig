@@ -70,6 +70,10 @@
                 >Jouer l'animation</a>
             </div>
 
+            <div class="mt-4 redirecte">
+                <a class="btn-alt" href="{{ path('opponents_list') }}">Retour aux adversaires</a>
+            </div>
+
             <div class="mt-4" style="width:100%; max-width: 960px;">
                 <h3>Déroulé du combat</h3>
                 {% if result.turns is empty %}
@@ -119,17 +123,13 @@
                 <div class="mt-3" style="text-align:center;">
                     {% set winner = result.winner %}
                     {% if winner == 'A' %}
-                        <span class="badge bg-success">Vainqueur: Equipe A</span>
+                        <span class="badge bg-success">Vainqueur: Vous avez gagné</span>
                     {% elseif winner == 'B' %}
-                        <span class="badge bg-success">Vainqueur: Equipe B</span>
+                        <span class="badge bg-success">Vainqueur: L'équipe adverse</span>
                     {% else %}
                         <span class="badge bg-secondary">Egalité</span>
                     {% endif %}
                 </div>
-            </div>
-
-            <div class="mt-4 redirecte">
-                <a class="btn-alt" href="{{ path('opponents_list') }}">Retour aux adversaires</a>
             </div>
         </div>
     </div>
